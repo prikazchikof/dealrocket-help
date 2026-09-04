@@ -38,6 +38,7 @@ UNVERIFIED_SUPERLATIVE = re.compile(
 ALLOWED_TELEGRAM_HANDLE = "dealrockets"
 VERIFIED_PERCENT_CLAIMS = {
     "data-and-freshness": ("5–10% контактов",),
+    "search-filters": ("95% данных DealRocket",),
 }
 
 
