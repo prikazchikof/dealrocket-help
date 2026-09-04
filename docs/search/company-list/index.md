@@ -87,4 +87,4 @@ last_verified: 2026-09-04
 Статья понятна без ролика. Если удобнее увидеть тот же сценарий в интерфейсе, посмотрите видео [«Как найти контакты по своему списку компаний»](https://vk.com/dealrocket?z=video-133003148_456239043%2Fpl_-133003148_2).
 
 [Открыть DealRocket](https://dealrocket.ru/app/){ .md-button .md-button--primary }
-[Работать с полученным списком](../../contacts/index.md){ .md-button }
+[Работать с полученным списком](../../lists/index.md){ .md-button }

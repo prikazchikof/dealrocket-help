@@ -19,6 +19,7 @@ EXPECTED_ARTICLES = {
     "search/large-business/index.md": "search-large-business",
     "search/refine/index.md": "search-refine",
     "contacts/index.md": "contacts-and-lists",
+    "lists/index.md": "working-with-lists",
     "export/index.md": "exporting-data",
     "data-quality/index.md": "data-and-freshness",
     "billing/index.md": "plans-and-balance",
@@ -107,6 +108,7 @@ class ContentTest(unittest.TestCase):
             "search-large-business",
             "search-refine",
             "contacts-and-lists",
+            "working-with-lists",
             "exporting-data",
             "data-and-freshness",
             "plans-and-balance",
@@ -123,6 +125,7 @@ class ContentTest(unittest.TestCase):
                 "getting-started",
                 "search-large-business",
                 "search-refine",
+                "working-with-lists",
             }:
                 continue
             words = article.markdown.split()
