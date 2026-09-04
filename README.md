@@ -10,3 +10,5 @@
 - Проверка готовности постоянного домена: `powershell -ExecutionPolicy Bypass -File scripts/check-domain.ps1`
 
 Сайт собирается Material for MkDocs и публикуется GitHub Pages из ветки `main`.
+Видео мини-курса встраиваются в статьи через официальный VK Video player и не
+копируются в Git-репозиторий как тяжёлые медиафайлы.

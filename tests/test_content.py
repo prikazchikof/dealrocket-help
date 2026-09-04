@@ -35,6 +35,20 @@ REQUIRED_MARKDOWN_ANCHORS = {
     "search/company-list/index.md": {"enrichment"},
 }
 
+VIDEO_ARTICLES = {
+    "start/why-dealrocket/index.md": "456239040",
+    "start/index.md": "456239039",
+    "search/index.md": "456239041",
+    "search/company-list/index.md": "456239043",
+    "search/large-business/index.md": "456239044",
+    "search/refine/index.md": "456239041",
+    "contacts/index.md": "456239049",
+    "lists/index.md": "456239045",
+    "export/index.md": "456239046",
+    "data-quality/index.md": "456239048",
+    "outreach/index.md": "456239050",
+}
+
 
 class ContentTest(unittest.TestCase):
     @classmethod
@@ -103,6 +117,20 @@ class ContentTest(unittest.TestCase):
             if article.metadata["id"] == "home":
                 continue
             self.assertIn("Также ищут:", article.markdown)
+
+    def test_course_videos_are_embedded_at_the_start(self) -> None:
+        articles_by_path = {
+            article.path.relative_to(ROOT / "docs").as_posix(): article.markdown
+            for article in self.articles
+        }
+        for path, video_id in VIDEO_ARTICLES.items():
+            markdown = articles_by_path[path]
+            self.assertIn(f"id={video_id}", markdown, path)
+            self.assertIn('class="help-video-player"', markdown, path)
+            self.assertIn('title="', markdown, path)
+            self.assertIn('loading="lazy"', markdown, path)
+            self.assertIn("allowfullscreen", markdown, path)
+            self.assertLess(markdown.index('class="help-video-player"'), markdown.index("**Также ищут:**"), path)
 
     def test_contextual_faqs_are_kept_with_their_guides(self) -> None:
         faq_ids = {
