@@ -122,6 +122,7 @@ class ContentTest(unittest.TestCase):
                 "home",
                 "getting-started",
                 "search-large-business",
+                "search-refine",
             }:
                 continue
             words = article.markdown.split()

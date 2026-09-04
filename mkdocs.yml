@@ -68,7 +68,7 @@ nav:
       - Собрать новую базу: search/index.md
       - Найти по своему списку: search/company-list/index.md
       - Найти в крупном бизнесе: search/large-business/index.md
-      - Уточнить результаты: search/refine/index.md
+      - Убрать нерелевантные компании: search/refine/index.md
   - Работа с результатами:
       - Контакты и списки: contacts/index.md
       - Экспорт в Excel: export/index.md
