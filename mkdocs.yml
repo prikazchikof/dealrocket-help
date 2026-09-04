@@ -64,6 +64,7 @@ extra:
 nav:
   - Навигация по справке: index.md
   - Начало работы:
+      - Зачем использовать DealRocket: start/why-dealrocket/index.md
       - Подготовиться к поиску: start/index.md
       - Качество данных: data-quality/index.md
   - Поиск клиентов:

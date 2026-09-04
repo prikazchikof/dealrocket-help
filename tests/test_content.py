@@ -14,6 +14,7 @@ from validate_content import load_site_url  # noqa: E402
 EXPECTED_ARTICLES = {
     "index.md": "home",
     "start/index.md": "getting-started",
+    "start/why-dealrocket/index.md": "why-dealrocket",
     "search/index.md": "finding-clients",
     "search/ai-assistant/index.md": "ai-client-search",
     "search/company-list/index.md": "search-company-list",
@@ -131,6 +132,7 @@ class ContentTest(unittest.TestCase):
                 "plans-and-balance",
                 "contact-tarification",
                 "ai-client-search",
+                "why-dealrocket",
             }:
                 continue
             words = article.markdown.split()

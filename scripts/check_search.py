@@ -8,6 +8,8 @@ from pathlib import Path
 
 
 SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
+    "зачем использовать DealRocket": ("start/why-dealrocket/", ("зачем", "dealrocket")),
+    "как качество базы влияет на холодные продажи": ("start/why-dealrocket/", ("качеств", "базы", "холодн")),
     "как найти клиентов": ("search/", ("найти", "клиент")),
     "как найти ЛПР": ("search/", ("лпр",)),
     "AI-помощник для поиска клиентов": ("search/ai-assistant/", ("ai-помощник", "клиент")),
