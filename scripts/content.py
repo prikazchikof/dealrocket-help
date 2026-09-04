@@ -36,6 +36,9 @@ UNVERIFIED_SUPERLATIVE = re.compile(
     r"(?i)\b(?:лучш\w*|единственн\w*|крупнейш\w*)\s+(?:данн\w*|баз\w*|сервис\w*|источник\w*)"
 )
 ALLOWED_TELEGRAM_HANDLE = "dealrockets"
+VERIFIED_PERCENT_CLAIMS = {
+    "data-and-freshness": ("5–10% контактов",),
+}
 
 
 @dataclass(frozen=True)
@@ -96,17 +99,23 @@ def validate_content_safety(articles: list[Article]) -> None:
         text = f"{metadata_text}\n{article.markdown}"
         relative_path = article.path.as_posix()
 
+        percent_text = text
+        for verified_claim in VERIFIED_PERCENT_CLAIMS.get(article.metadata["id"], ()):
+            percent_text = percent_text.replace(verified_claim, "подтверждённая оценка")
+
         checks = (
             (EMAIL_ADDRESS, "email-адрес"),
             (RUSSIAN_PHONE, "номер телефона"),
             (PAYMENT_CARD, "возможный номер банковской карты"),
-            (UNVERIFIED_PERCENT, "неподтверждённый процент"),
             (UNVERIFIED_DATABASE_SIZE, "неподтверждённый размер базы"),
             (UNVERIFIED_SUPERLATIVE, "неподтверждённое превосходное утверждение"),
         )
         for pattern, label in checks:
             if pattern.search(text):
                 raise ValueError(f"{relative_path}: найден {label}")
+
+        if UNVERIFIED_PERCENT.search(percent_text):
+            raise ValueError(f"{relative_path}: найден неподтверждённый процент")
 
         for match in TELEGRAM_LINK.finditer(text):
             if match.group(1).lower() != ALLOWED_TELEGRAM_HANDLE:

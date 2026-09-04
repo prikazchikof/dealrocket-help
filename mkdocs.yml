@@ -63,7 +63,9 @@ extra:
 
 nav:
   - Главная: index.md
-  - Подготовиться к поиску: start/index.md
+  - Главное:
+      - Подготовиться к поиску: start/index.md
+      - Качество данных: data-quality/index.md
   - Поиск клиентов:
       - Собрать новую базу: search/index.md
       - Найти по своему списку: search/company-list/index.md
@@ -74,6 +76,5 @@ nav:
       - Списки: lists/index.md
       - Экспорт в Excel: export/index.md
       - Что делать с базой: outreach/index.md
-  - Данные и оплата:
-      - Качество данных: data-quality/index.md
+  - Тарифы и оплата:
       - Баланс, оплата и документы: billing/index.md
