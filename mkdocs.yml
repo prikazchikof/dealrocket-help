@@ -62,8 +62,8 @@ extra:
     support: https://t.me/dealrockets
 
 nav:
-  - Главная: index.md
-  - Главное:
+  - Навигация по справке: index.md
+  - Начало работы:
       - Подготовиться к поиску: start/index.md
       - Качество данных: data-quality/index.md
   - Поиск клиентов:
