@@ -50,7 +50,9 @@ REQUIRED_MARKDOWN_ANCHORS = {
     },
 }
 
-EXPECTED_FILTER_HEADINGS = {
+EXPECTED_FILTER_NAMES = {
+    "ИИ-помощник",
+    "AI-фильтр списка",
     "«Подходит ли»",
     "«Управленческий уровень»",
     "«Функция или департамент»",
@@ -184,17 +186,21 @@ class ContentTest(unittest.TestCase):
 
     def test_filter_reference_covers_every_visible_filter(self) -> None:
         article = next(article for article in self.articles if article.metadata["id"] == "search-filters")
-        headings = {
-            line.removeprefix("### ").strip()
-            for line in article.markdown.splitlines()
-            if line.startswith("### ")
-        }
-        self.assertEqual(headings, EXPECTED_FILTER_HEADINGS)
-        for heading in headings:
-            section = article.markdown.split(f"### {heading}", 1)[1].split("\n### ", 1)[0].split("\n## ", 1)[0]
-            self.assertIn("**Как работает.**", section, heading)
-            self.assertIn("**Когда использовать.**", section, heading)
-            self.assertIn("**Когда не использовать.**", section, heading)
+        rows = [line for line in article.markdown.splitlines() if line.startswith("| **")]
+        names = {line.split("**", 2)[1] for line in rows}
+        self.assertEqual(names, EXPECTED_FILTER_NAMES)
+        for row in rows:
+            self.assertEqual(row.count("|"), 5, row)
+        self.assertEqual(
+            article.markdown.count(
+                "| Фильтр | Как работает | Когда использовать | Когда лучше не использовать |"
+            ),
+            11,
+        )
+        self.assertIn(
+            "| Инструмент | Как работает | Когда использовать | Когда лучше не использовать |",
+            article.markdown,
+        )
 
     def test_course_videos_match_their_articles_and_sections(self) -> None:
         articles_by_path = {

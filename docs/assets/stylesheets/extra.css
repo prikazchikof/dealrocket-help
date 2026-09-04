@@ -151,6 +151,14 @@ body {
   line-height: 1.72;
 }
 
+.md-typeset table:not([class]) {
+  width: 100%;
+}
+
+.md-typeset table:not([class]) th:first-child {
+  min-width: 9rem;
+}
+
 .help-video-player {
   width: 100%;
   aspect-ratio: 16 / 9;
