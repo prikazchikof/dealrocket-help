@@ -67,6 +67,7 @@ nav:
       - Подготовиться к поиску: start/index.md
       - Качество данных: data-quality/index.md
   - Поиск клиентов:
+      - AI-помощник и подборки: search/ai-assistant/index.md
       - Собрать новую базу: search/index.md
       - Найти по своему списку: search/company-list/index.md
       - Найти в крупном бизнесе: search/large-business/index.md

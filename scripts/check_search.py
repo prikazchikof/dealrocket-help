@@ -10,6 +10,9 @@ from pathlib import Path
 SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
     "как найти клиентов": ("search/", ("найти", "клиент")),
     "как найти ЛПР": ("search/", ("лпр",)),
+    "AI-помощник для поиска клиентов": ("search/ai-assistant/", ("ai-помощник", "клиент")),
+    "AI-фильтр списка": ("search/ai-assistant/", ("ai-фильтр", "спис")),
+    "готовые подборки": ("search/ai-assistant/", ("готов", "подбор")),
     "свой список компаний": ("search/company-list/", ("спис", "компан")),
     "по ИНН": ("search/company-list/", ("инн",)),
     "обогащение": ("search/company-list/", ("обогащ",)),

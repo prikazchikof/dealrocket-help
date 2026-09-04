@@ -15,6 +15,7 @@ EXPECTED_ARTICLES = {
     "index.md": "home",
     "start/index.md": "getting-started",
     "search/index.md": "finding-clients",
+    "search/ai-assistant/index.md": "ai-client-search",
     "search/company-list/index.md": "search-company-list",
     "search/large-business/index.md": "search-large-business",
     "search/refine/index.md": "search-refine",
@@ -129,6 +130,7 @@ class ContentTest(unittest.TestCase):
                 "using-exported-data",
                 "plans-and-balance",
                 "contact-tarification",
+                "ai-client-search",
             }:
                 continue
             words = article.markdown.split()
