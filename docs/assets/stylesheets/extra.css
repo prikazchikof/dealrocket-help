@@ -360,6 +360,22 @@ body {
   border-left: 1px solid var(--dr-line);
 }
 
+@media screen and (min-width: 60em) {
+  .md-sidebar__scrollwrap {
+    box-sizing: border-box;
+    padding: 0 0.55rem 0.8rem;
+    background: #fff;
+    border: 1px solid var(--dr-line) !important;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(52, 62, 89, 0.05);
+  }
+
+  .md-sidebar .md-nav__title {
+    background: #fff;
+    box-shadow: none;
+  }
+}
+
 .md-footer {
   background: #2a334b;
 }
