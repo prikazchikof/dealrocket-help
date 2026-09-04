@@ -41,14 +41,12 @@ body {
 }
 
 .md-header__button.md-logo img {
-  width: 150px;
+  width: 164px;
   height: auto;
 }
 
 .md-header__button.md-logo {
-  padding: 0.32rem 0.48rem;
-  background: #fff;
-  border-radius: 8px;
+  padding: 0.38rem 0.2rem;
 }
 
 .md-header__inner {
@@ -273,6 +271,11 @@ body {
   font-weight: 700;
 }
 
+/* Front matter uses status for publishing, not for a visible navigation badge. */
+.md-status--published {
+  display: none;
+}
+
 .md-sidebar--primary .md-sidebar__scrollwrap {
   border-right: 1px solid var(--dr-line);
 }
@@ -339,7 +342,7 @@ body {
 
 @media screen and (max-width: 44.984375em) {
   .md-header__button.md-logo img {
-    width: 124px;
+    width: 138px;
   }
 
   .help-search-prompt {

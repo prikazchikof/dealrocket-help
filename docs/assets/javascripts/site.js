@@ -8,7 +8,6 @@
     actions.setAttribute("aria-label", "Ссылки DealRocket");
     actions.innerHTML =
       '<a class="dr-header-action" href="https://dealrocket.ru/app/pricing/">Тарифы</a>' +
-      '<a class="dr-header-action" href="https://t.me/dealrockets">Поддержка</a>' +
       '<a class="dr-header-action dr-header-action--primary" href="https://dealrocket.ru/app/">Открыть DealRocket</a>';
     header.appendChild(actions);
   }

@@ -83,7 +83,5 @@ DealRocket помогает найти подходящие компании, в
 
 [Открыть DealRocket](https://dealrocket.ru/app/){ .md-button .md-button--primary }
 [Тарифы](https://dealrocket.ru/app/pricing/){ .md-button }
-[Написать в поддержку](https://t.me/dealrockets){ .md-button }
 
-!!! info "Актуальные условия"
-    Цены и состав тарифов могут меняться, поэтому справка не дублирует их. Актуальные условия всегда находятся на странице [«Тарифы»](https://dealrocket.ru/app/pricing/).
+Цены и состав тарифов могут меняться, поэтому справка не дублирует их. Актуальные условия всегда находятся на странице [«Тарифы»](https://dealrocket.ru/app/pricing/).
