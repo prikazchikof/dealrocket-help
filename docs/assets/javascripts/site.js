@@ -23,12 +23,38 @@
     });
   }
 
+  function decorateExternalNavLinks() {
+    var externalLinks = [
+      "https://dealrocket.ru/how_to/",
+      "https://dealrocket.ru/news/",
+    ];
+
+    document.querySelectorAll(".md-nav__link").forEach(function (link) {
+      if (!externalLinks.includes(link.href)) return;
+
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.classList.add("dr-external-nav-link");
+      link.setAttribute("aria-label", link.textContent.trim() + " — откроется в новой вкладке");
+
+      if (!link.querySelector(".dr-external-nav-link__icon")) {
+        var icon = document.createElement("span");
+        icon.className = "dr-external-nav-link__icon";
+        icon.setAttribute("aria-hidden", "true");
+        icon.textContent = "↗";
+        link.appendChild(icon);
+      }
+    });
+  }
+
   addHeaderActions();
   bindSearchPrompts();
+  decorateExternalNavLinks();
   if (typeof document$ !== "undefined") {
     document$.subscribe(function () {
       addHeaderActions();
       bindSearchPrompts();
+      decorateExternalNavLinks();
     });
   }
 })();

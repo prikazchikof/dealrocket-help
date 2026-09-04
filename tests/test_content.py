@@ -318,6 +318,15 @@ class ContentTest(unittest.TestCase):
         for setting in ("repo_url:", "repo_name:", "edit_uri:", "content.action.edit"):
             self.assertNotIn(setting, config)
 
+    def test_additional_nav_links_are_external(self) -> None:
+        config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+        script = (ROOT / "docs/assets/javascripts/site.js").read_text(encoding="utf-8")
+        for url in ("https://dealrocket.ru/how_to/", "https://dealrocket.ru/news/"):
+            self.assertIn(url, config)
+            self.assertIn(url, script)
+        self.assertIn('link.target = "_blank"', script)
+        self.assertIn('link.rel = "noopener noreferrer"', script)
+
 
 if __name__ == "__main__":
     unittest.main()

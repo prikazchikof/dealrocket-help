@@ -333,6 +333,20 @@ body {
   font-weight: 700;
 }
 
+.dr-external-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+
+.dr-external-nav-link__icon {
+  flex: 0 0 auto;
+  color: var(--dr-muted);
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
 /* Front matter uses status for publishing, not for a visible navigation badge. */
 .md-status--published {
   display: none;
