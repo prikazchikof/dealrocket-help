@@ -53,7 +53,7 @@ class ContentTest(unittest.TestCase):
             "экспорт",
             "закрывающие документы",
             "инвойсбокс",
-            "noisebox",
+            "договор-оферта",
             "вернуть последний платёж",
         ):
             self.assertIn(topic, haystack)
