@@ -291,10 +291,6 @@ body {
   outline: none !important;
 }
 
-.md-typeset .scenario-cards > ul > li:last-child {
-  grid-column: 1 / -1;
-}
-
 .md-typeset .result-cards > ul {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -400,10 +396,6 @@ body {
 
   .md-typeset .grid.cards {
     grid-template-columns: 1fr;
-  }
-
-  .md-typeset .scenario-cards > ul > li:last-child {
-    grid-column: auto;
   }
 
   .md-typeset .result-cards > ul {
