@@ -12,7 +12,7 @@ last_verified: 2026-09-04
 Когда вы продаёте в крупный бизнес, потенциальных клиентов может быть всего несколько десятков или сотен. Поэтому здесь лучше искать каждую компанию отдельно, чтобы не потерять нужную организацию или полезного сотрудника.
 
 <div class="help-video-player">
-  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239044&hd=2&autoplay=0" title="Как искать контакты в крупном бизнесе" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239042&hd=2&autoplay=0" title="Как искать контакты в крупном бизнесе" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Также ищут:** «как найти ЛПР в крупной компании», «как искать по группе компаний», «как найти контакты в банках и корпорациях», «как работать со списком ключевых клиентов».

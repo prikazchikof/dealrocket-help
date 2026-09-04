@@ -36,17 +36,26 @@ REQUIRED_MARKDOWN_ANCHORS = {
 }
 
 VIDEO_ARTICLES = {
-    "start/why-dealrocket/index.md": "456239040",
-    "start/index.md": "456239039",
-    "search/index.md": "456239041",
-    "search/company-list/index.md": "456239043",
-    "search/large-business/index.md": "456239044",
-    "search/refine/index.md": "456239041",
-    "contacts/index.md": "456239049",
-    "lists/index.md": "456239045",
-    "export/index.md": "456239046",
-    "data-quality/index.md": "456239048",
-    "outreach/index.md": "456239050",
+    "start/why-dealrocket/index.md": {"456239039": "Почему вы обязаны использовать DealRocket"},
+    "search/index.md": {
+        "456239040": "Как правильно искать компании по отраслям",
+        "456239041": "Как правильно делать поиск по должностям",
+    },
+    "search/company-list/index.md": {"456239044": "Как найти контакты по своему списку компаний"},
+    "search/large-business/index.md": {"456239042": "Как искать контакты в крупном бизнесе"},
+    "contacts/index.md": {"456239048": "Что делать, когда нет контакта сотрудника"},
+    "lists/index.md": {"456239047": "Как сохранить найденные результаты в список"},
+    "export/index.md": {"456239045": "Как экспортировать контакты в Excel или CRM"},
+    "data-quality/index.md": {"456239046": "Насколько качественные и актуальные данные"},
+    "outreach/index.md": {"456239049": "Что делать с полученной базой"},
+}
+
+VIDEO_FREE_ARTICLES = {
+    "start/index.md",
+    "search/ai-assistant/index.md",
+    "search/refine/index.md",
+    "billing/index.md",
+    "billing/tarification/index.md",
 }
 
 
@@ -118,19 +127,31 @@ class ContentTest(unittest.TestCase):
                 continue
             self.assertIn("Также ищут:", article.markdown)
 
-    def test_course_videos_are_embedded_at_the_start(self) -> None:
+    def test_course_videos_match_their_articles_and_sections(self) -> None:
         articles_by_path = {
             article.path.relative_to(ROOT / "docs").as_posix(): article.markdown
             for article in self.articles
         }
-        for path, video_id in VIDEO_ARTICLES.items():
+        for path, expected_videos in VIDEO_ARTICLES.items():
             markdown = articles_by_path[path]
-            self.assertIn(f"id={video_id}", markdown, path)
-            self.assertIn('class="help-video-player"', markdown, path)
-            self.assertIn('title="', markdown, path)
-            self.assertIn('loading="lazy"', markdown, path)
-            self.assertIn("allowfullscreen", markdown, path)
-            self.assertLess(markdown.index('class="help-video-player"'), markdown.index("**Также ищут:**"), path)
+            self.assertEqual(markdown.count('class="help-video-player"'), len(expected_videos), path)
+            for video_id, title in expected_videos.items():
+                self.assertIn(f"id={video_id}", markdown, path)
+                self.assertIn(f'title="{title}"', markdown, path)
+            self.assertEqual(markdown.count('loading="lazy"'), len(expected_videos), path)
+            self.assertEqual(markdown.count("allowfullscreen"), len(expected_videos), path)
+
+        for path in VIDEO_FREE_ARTICLES:
+            self.assertNotIn('class="help-video-player"', articles_by_path[path], path)
+
+        self.assertLess(
+            articles_by_path["search/index.md"].index("id=456239041"),
+            articles_by_path["search/index.md"].index("### Если нужной функции нет в списке"),
+        )
+        self.assertLess(
+            articles_by_path["contacts/index.md"].index("## Что делать, если нет прямого контакта"),
+            articles_by_path["contacts/index.md"].index("id=456239048"),
+        )
 
     def test_contextual_faqs_are_kept_with_their_guides(self) -> None:
         faq_ids = {

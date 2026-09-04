@@ -12,7 +12,7 @@ last_verified: 2026-09-04
 Этот сценарий подходит, если целевые компании уже известны, но вам нужно найти сведения о них, сотрудников и доступные контакты. В DealRocket можно использовать обычные фильтры или запустить обогащение списка сайтов.
 
 <div class="help-video-player">
-  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239043&hd=2&autoplay=0" title="Как найти контакты по своему списку компаний" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239044&hd=2&autoplay=0" title="Как найти контакты по своему списку компаний" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Также ищут:** «как найти ЛПР по списку компаний», «как искать по ИНН», «как загрузить сайты компаний», «как обогатить свою базу».

@@ -11,10 +11,6 @@ last_verified: 2026-09-04
 
 В DealRocket можно найти прямые контакты конкретного сотрудника, общие контакты его компании или оба варианта. Выберите нужный тип в зависимости от того, как планируете связаться с потенциальным клиентом.
 
-<div class="help-video-player">
-  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239049&hd=2&autoplay=0" title="Что делать, когда нет контакта сотрудника" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 **Также ищут:** «чем контакты сотрудника отличаются от контактов компании», «как найти только мобильные телефоны», «почему 0 контактов», «что делать, если нет телефона ЛПР», «спишется ли контакт повторно».
 
 ## Чем отличаются контакты сотрудника и компании { #contact-types }
@@ -43,6 +39,10 @@ last_verified: 2026-09-04
 ## Что делать, если нет прямого контакта сотрудника { #no-direct-contact }
 
 Отсутствие телефона или email — нормальное ограничение открытых данных. Человек мог не публиковать контакт, закрыть профиль или сменить место работы.
+
+<div class="help-video-player">
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239048&hd=2&autoplay=0" title="Что делать, когда нет контакта сотрудника" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Попробуйте последовательно:
 

@@ -12,7 +12,7 @@ last_verified: 2026-09-04
 DealRocket объединяет сведения о компаниях и сотрудниках из нескольких источников. Благодаря этому в одной выдаче можно найти организацию, нужных людей и доступные способы связи с ними.
 
 <div class="help-video-player">
-  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239048&hd=2&autoplay=0" title="Насколько качественные и актуальные данные" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239046&hd=2&autoplay=0" title="Насколько качественные и актуальные данные" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Также ищут:** «откуда берутся контакты», «можно ли доверять данным из соцсетей», «как часто обновляется база», «есть ли неактуальные данные», «почему у сотрудника нет контакта».

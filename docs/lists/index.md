@@ -12,7 +12,7 @@ last_verified: 2026-09-04
 Списки помогают сохранить подходящие результаты, продолжить поиск внутри выбранных компаний и вручную убрать оставшиеся неподходящие строки.
 
 <div class="help-video-player">
-  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239045&hd=2&autoplay=0" title="Как сохранить найденные результаты в список" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239047&hd=2&autoplay=0" title="Как сохранить найденные результаты в список" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Также ищут:** «как сохранить найденную базу», «где найти сохранённые компании», «как очистить список», «как найти CEO компаний, в которых есть HR».

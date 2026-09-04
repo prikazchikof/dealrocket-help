@@ -12,7 +12,7 @@ last_verified: 2026-09-04
 Этот сценарий подходит, когда конкретного списка компаний ещё нет. Сначала найдите подходящие организации, затем — сотрудников внутри них. После этого уберите из результатов нерелевантные компании.
 
 <div class="help-video-player">
-  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239041&hd=2&autoplay=0" title="Как правильно искать компании по отраслям" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239040&hd=2&autoplay=0" title="Как правильно искать компании по отраслям" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Также ищут:** «как найти новых клиентов», «как собрать базу компаний по отрасли», «как найти ЛПР», «как искать по должностям».
@@ -46,6 +46,10 @@ last_verified: 2026-09-04
 ## Шаг 3. Определите ЛПР и сотрудников, через которых можно на него выйти { #seniority }
 
 После поиска компаний выберите, с какими сотрудниками хотите начать коммуникацию.
+
+<div class="help-video-player">
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239041&hd=2&autoplay=0" title="Как правильно делать поиск по должностям" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 1. Сначала выберите **«Управленческий уровень»**. Если ищете руководителей, отметьте максимум подходящих вариантов: основателей, владельцев, директоров, руководителей, C-level, партнёров и вице-президентов.
 2. Затем при необходимости добавьте **«Функцию или департамент»** — например, продажи, IT или кадры. Этот фильтр сильно уменьшает количество результатов, поэтому применяйте его после управленческого уровня.

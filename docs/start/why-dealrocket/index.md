@@ -14,7 +14,7 @@ last_verified: 2026-09-04
 DealRocket помогает собрать эту основу: найти подходящие организации, выбрать нужных сотрудников и получить доступные контакты.
 
 <div class="help-video-player">
-  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239040&hd=2&autoplay=0" title="Почему вы обязаны использовать DealRocket" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239039&hd=2&autoplay=0" title="Почему вы обязаны использовать DealRocket" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 **Также ищут:** «для чего нужен DealRocket», «как качество базы влияет на холодные продажи», «где найти прямые контакты ЛПР», «как подготовиться к холодной коммуникации».
