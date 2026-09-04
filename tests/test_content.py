@@ -111,7 +111,6 @@ class ContentTest(unittest.TestCase):
             "working-with-lists",
             "exporting-data",
             "data-and-freshness",
-            "plans-and-balance",
             "using-exported-data",
         }
         for article in self.articles:
