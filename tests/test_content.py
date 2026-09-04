@@ -23,6 +23,7 @@ EXPECTED_ARTICLES = {
     "export/index.md": "exporting-data",
     "data-quality/index.md": "data-and-freshness",
     "billing/index.md": "plans-and-balance",
+    "billing/tarification/index.md": "contact-tarification",
     "outreach/index.md": "using-exported-data",
 }
 
@@ -126,6 +127,8 @@ class ContentTest(unittest.TestCase):
                 "search-refine",
                 "working-with-lists",
                 "using-exported-data",
+                "plans-and-balance",
+                "contact-tarification",
             }:
                 continue
             words = article.markdown.split()

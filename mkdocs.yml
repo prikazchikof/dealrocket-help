@@ -77,4 +77,5 @@ nav:
       - Экспорт в Excel: export/index.md
       - Что делать с базой: outreach/index.md
   - Тарифы и оплата:
-      - Баланс, оплата и документы: billing/index.md
+      - Тарификация: billing/tarification/index.md
+      - Оплата и документы: billing/index.md
