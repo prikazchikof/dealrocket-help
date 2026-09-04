@@ -17,6 +17,7 @@ EXPECTED_ARTICLES = {
     "start/why-dealrocket/index.md": "why-dealrocket",
     "search/index.md": "finding-clients",
     "search/ai-assistant/index.md": "ai-client-search",
+    "search/filters/index.md": "search-filters",
     "search/company-list/index.md": "search-company-list",
     "search/large-business/index.md": "search-large-business",
     "search/refine/index.md": "search-refine",
@@ -33,6 +34,60 @@ REQUIRED_MARKDOWN_ANCHORS = {
     "export/index.md": {"all-or-selected", "stars", "empty-fields", "over-10000"},
     "billing/index.md": {"invoicebox", "documents", "refund", "cancellation"},
     "search/company-list/index.md": {"enrichment"},
+    "search/filters/index.md": {
+        "ai-filter",
+        "job-titles",
+        "location",
+        "company",
+        "company-description",
+        "industries",
+        "okved",
+        "company-size",
+        "source",
+        "contacts",
+        "opened-contacts",
+        "record-count",
+    },
+}
+
+EXPECTED_FILTER_HEADINGS = {
+    "«Подходит ли»",
+    "«Управленческий уровень»",
+    "«Функция или департамент»",
+    "«Включить должности»",
+    "«Исключить должности»",
+    "«Год начала работы»",
+    "«Работают сейчас»",
+    "«Включать отделы»",
+    "«Страна»",
+    "«Область»",
+    "«Город»",
+    "«Найти компании»",
+    "«Ключевые слова в названии компании»",
+    "«Сайт компании»",
+    "«ИННы»",
+    "«Телефон компании или человека»",
+    "«Есть сайт»",
+    "«Содержит любое из слов»",
+    "«Содержит каждое из слов»",
+    "«Не содержит каждое из слов»",
+    "«Категории из карт»",
+    "«Подборки по семантике»",
+    "«Индустрии из соц. сетей»",
+    "«Компания содержит каждый из выбранных типов индустрий»",
+    "«Исключить категории, подборки и индустрии»",
+    "«Вид деятельности»",
+    "«Выручка — за год»",
+    "«Количество сотрудников»",
+    "«Источник данных»",
+    "«Один сотрудник из компании»",
+    "«Есть имя сотрудника»",
+    "Контакты сотрудника: «есть любой контакт», «есть почта», «есть телефон»",
+    "Контакты сотрудника: «есть мобильный телефон»",
+    "Контакты компании: «есть любой контакт», «есть почта», «есть телефон»",
+    "Контакты сотрудника: «контакты открыты» и «контакты закрыты»",
+    "Контакты компании: «контакты открыты» и «контакты закрыты»",
+    "«Количество отображаемых записей»",
 }
 
 VIDEO_ARTICLES = {
@@ -126,6 +181,20 @@ class ContentTest(unittest.TestCase):
             if article.metadata["id"] == "home":
                 continue
             self.assertIn("Также ищут:", article.markdown)
+
+    def test_filter_reference_covers_every_visible_filter(self) -> None:
+        article = next(article for article in self.articles if article.metadata["id"] == "search-filters")
+        headings = {
+            line.removeprefix("### ").strip()
+            for line in article.markdown.splitlines()
+            if line.startswith("### ")
+        }
+        self.assertEqual(headings, EXPECTED_FILTER_HEADINGS)
+        for heading in headings:
+            section = article.markdown.split(f"### {heading}", 1)[1].split("\n### ", 1)[0].split("\n## ", 1)[0]
+            self.assertIn("**Как работает.**", section, heading)
+            self.assertIn("**Когда использовать.**", section, heading)
+            self.assertIn("**Когда не использовать.**", section, heading)
 
     def test_course_videos_match_their_articles_and_sections(self) -> None:
         articles_by_path = {

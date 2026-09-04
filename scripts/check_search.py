@@ -20,6 +20,9 @@ SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
     "обогащение": ("search/company-list/", ("обогащ",)),
     "крупный бизнес": ("search/large-business/", ("крупн", "бизнес")),
     "убрать нерелевантные компании": ("search/refine/", ("нерелевант", "компан")),
+    "как работают фильтры": ("search/filters/", ("фильтр", "работ")),
+    "чем ОКВЭД отличается от индустрии": ("search/filters/", ("оквэд", "индустри")),
+    "почему после фильтра мало результатов": ("search/filters/", ("фильтр", "мало", "результат")),
     "почему 0 контактов": ("contacts/", ("0", "контакт")),
     "нет прямого контакта": ("contacts/", ("нет", "прям", "контакт")),
     "как работать со списками": ("lists/", ("списк",)),
@@ -40,6 +43,20 @@ REQUIRED_DEEP_LINKS: dict[str, tuple[str, ...]] = {
     "billing/index.html": ("invoicebox", "documents", "refund", "cancellation"),
     "search/company-list/index.html": ("enrichment",),
     "data-quality/index.html": ("sources",),
+    "search/filters/index.html": (
+        "ai-filter",
+        "job-titles",
+        "location",
+        "company",
+        "company-description",
+        "industries",
+        "okved",
+        "company-size",
+        "source",
+        "contacts",
+        "opened-contacts",
+        "record-count",
+    ),
 }
 
 

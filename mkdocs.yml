@@ -73,6 +73,7 @@ nav:
       - Найти в крупном бизнесе: search/large-business/index.md
       - Убрать нерелевантные компании: search/refine/index.md
       - AI-помощник и подборки: search/ai-assistant/index.md
+      - Как работают фильтры: search/filters/index.md
   - Работа с результатами:
       - Контакты сотрудников и компаний: contacts/index.md
       - Списки: lists/index.md
