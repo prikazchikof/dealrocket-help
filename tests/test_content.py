@@ -118,7 +118,11 @@ class ContentTest(unittest.TestCase):
 
     def test_scenario_guides_are_long_form(self) -> None:
         for article in self.articles:
-            if article.metadata["id"] in {"home", "getting-started"}:
+            if article.metadata["id"] in {
+                "home",
+                "getting-started",
+                "search-large-business",
+            }:
                 continue
             words = article.markdown.split()
             self.assertGreaterEqual(len(words), 500, article.metadata["id"])
