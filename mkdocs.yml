@@ -1,0 +1,79 @@
+site_name: Справка DealRocket
+site_description: Инструкции по поиску B2B-клиентов, работе с контактами, списками, экспортом и обогащением данных в DealRocket
+site_url: https://help.dealrocket.ru/
+copyright: © DealRocket
+
+theme:
+  name: material
+  language: ru
+  custom_dir: overrides
+  logo: assets/images/dealrocket-logo.png
+  favicon: assets/images/favicon.ico
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    scheme: dealrocket
+    primary: custom
+    accent: custom
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search:
+      lang:
+        - ru
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      title: На этой странице
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/site.js
+
+extra:
+  generator: false
+  links:
+    app: https://dealrocket.ru/app/
+    pricing: https://dealrocket.ru/app/pricing/
+    support: https://t.me/dealrockets
+
+nav:
+  - Главная: index.md
+  - Подготовиться к поиску: start/index.md
+  - Поиск клиентов:
+      - Собрать новую базу: search/index.md
+      - Найти по своему списку: search/company-list/index.md
+      - Найти в крупном бизнесе: search/large-business/index.md
+      - Уточнить результаты: search/refine/index.md
+  - Работа с результатами:
+      - Контакты и списки: contacts/index.md
+      - Экспорт в Excel: export/index.md
+      - Что делать с базой: outreach/index.md
+  - Данные и оплата:
+      - Качество данных: data-quality/index.md
+      - Баланс, оплата и документы: billing/index.md

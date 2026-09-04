@@ -1,0 +1,13 @@
+.venv/
+site/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.codex/reviews/
+docs/assets/help-corpus.v1.json
+
+# Local authoring context is not part of the public help repository.
+editorial/
+.codex/
+.cursor/
+AGENTS.md
