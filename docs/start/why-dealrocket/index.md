@@ -9,13 +9,13 @@ last_verified: 2026-09-04
 ---
 # Зачем использовать DealRocket
 
-<div class="help-video-player">
-  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239040&hd=2&autoplay=0" title="Почему вы обязаны использовать DealRocket" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 Результат холодной коммуникации зависит не только от письма или скрипта. Важно, в какие компании вы обращаетесь, с кем именно говорите и насколько актуальные данные используете.
 
 DealRocket помогает собрать эту основу: найти подходящие организации, выбрать нужных сотрудников и получить доступные контакты.
+
+<div class="help-video-player">
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239040&hd=2&autoplay=0" title="Почему вы обязаны использовать DealRocket" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 **Также ищут:** «для чего нужен DealRocket», «как качество базы влияет на холодные продажи», «где найти прямые контакты ЛПР», «как подготовиться к холодной коммуникации».
 

@@ -9,11 +9,11 @@ last_verified: 2026-09-04
 ---
 # Как выгрузить контакты в Excel
 
+Откройте нужную поисковую выдачу или список и выберите **«Экспорт и действия» → «Экспорт в Excel»**.
+
 <div class="help-video-player">
   <iframe src="https://vkvideo.ru/video_ext.php?oid=-133003148&id=456239046&hd=2&autoplay=0" title="Как экспортировать контакты в Excel или CRM" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
-
-Откройте нужную поисковую выдачу или список и выберите **«Экспорт и действия» → «Экспорт в Excel»**.
 
 **Также ищут:** «как скачать базу», «как выгрузить контакты в CRM», «почему в файле звёздочки», «как экспортировать больше 10 000 записей».
 
