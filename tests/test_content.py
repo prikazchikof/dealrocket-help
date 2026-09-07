@@ -335,6 +335,13 @@ class ContentTest(unittest.TestCase):
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
         self.assertIn("homepage: https://dealrocket.ru/", config)
 
+    def test_cookie_consent_uses_public_privacy_policy(self) -> None:
+        config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+        self.assertIn("consent:", config)
+        self.assertIn('Мы используем файлы "cookie"', config)
+        self.assertIn("https://dealrocket.ru/app/privacy.pdf", config)
+        self.assertIn("      - accept", config)
+
     def test_additional_nav_links_are_external(self) -> None:
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
         script = (ROOT / "docs/assets/javascripts/site.js").read_text(encoding="utf-8")

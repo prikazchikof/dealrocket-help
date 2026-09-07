@@ -60,6 +60,14 @@ extra_javascript:
 extra:
   generator: false
   homepage: https://dealrocket.ru/
+  consent:
+    title: Файлы cookie
+    description: >-
+      Мы используем файлы "cookie", в соответствии с
+      <a href="https://dealrocket.ru/app/privacy.pdf" target="_blank" rel="noopener">политикой</a>.
+      В интернете без них никак.
+    actions:
+      - accept
   links:
     app: https://dealrocket.ru/app/
     pricing: https://dealrocket.ru/app/pricing/
