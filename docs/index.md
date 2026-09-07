@@ -92,7 +92,7 @@ DealRocket — сервис для поиска B2B-клиентов и прям
 
     Подготовьте данные к звонкам, email-рассылкам или работе в социальных сетях и выберите подходящий канал для первого контакта.
 
-    [Начать работу с базой →](results/outreach/index.md){ .help-card-link }
+    [Начать работу с базой →](results/work-with-data/index.md){ .help-card-link }
 
 -   :material-wallet-outline:{ .lg .middle } **Разобраться с тарификацией**
 

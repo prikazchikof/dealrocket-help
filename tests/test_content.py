@@ -27,7 +27,7 @@ EXPECTED_ARTICLES = {
     "start/data-quality/index.md": "data-and-freshness",
     "billing/payment-documents/index.md": "plans-and-balance",
     "billing/tarification/index.md": "contact-tarification",
-    "results/outreach/index.md": "using-exported-data",
+    "results/work-with-data/index.md": "using-exported-data",
 }
 
 REQUIRED_MARKDOWN_ANCHORS = {
@@ -103,7 +103,7 @@ VIDEO_ARTICLES = {
     "results/lists/index.md": {"456239047": "Как сохранить найденные результаты в список"},
     "results/export/index.md": {"456239045": "Как экспортировать контакты в Excel или CRM"},
     "start/data-quality/index.md": {"456239046": "Насколько качественные и актуальные данные"},
-    "results/outreach/index.md": {"456239049": "Что делать с полученной базой"},
+    "results/work-with-data/index.md": {"456239049": "Что делать с полученной базой"},
 }
 
 VIDEO_FREE_ARTICLES = {
@@ -168,6 +168,7 @@ class ContentTest(unittest.TestCase):
             "lists/index.md",
             "export/index.md",
             "outreach/index.md",
+            "results/outreach/index.md",
             "data-quality/index.md",
             "billing/index.md",
         ):
