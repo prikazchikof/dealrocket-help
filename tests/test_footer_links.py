@@ -96,8 +96,26 @@ class FooterLinksTest(unittest.TestCase):
         self.assertIn('<summary class="dr-client-bases__summary">', partial)
         self.assertIn('target="_blank" rel="noopener"', partial)
         self.assertNotIn("nofollow", partial)
-        self.assertLess(footer.index('class="md-footer-meta'), footer.index('partials/copyright.html'))
-        self.assertLess(footer.index('partials/copyright.html'), footer.index('partials/client-base-links.html'))
+        self.assertLess(footer.index('partials/client-base-links.html'), footer.index('partials/site-footer.html'))
+
+    def test_site_footer_matches_public_company_links(self) -> None:
+        footer = (ROOT / "overrides" / "partials" / "site-footer.html").read_text(encoding="utf-8")
+        expected_urls = {
+            "https://dealrocket.ru/app/pricing",
+            "https://dealrocket.ru/app/offer.pdf",
+            "https://dealrocket.ru/app/privacy.pdf",
+            "https://dealrocket.ru/app/consent.pdf",
+            "https://dealrocket.ru/otzyvy_o_servise_dealrocket/",
+            "https://dealrocket.ru/news/",
+            "https://dealrocket.ru/sitemap/",
+            "https://dealrocket.ru/cases/",
+        }
+        for url in expected_urls:
+            with self.subTest(url=url):
+                self.assertIn(f'href="{url}"', footer)
+        self.assertIn("ООО «Системы Машинного Обучения»", footer)
+        self.assertIn("ИНН: 7802946363", footer)
+        self.assertIn("Copyright ©", footer)
 
     def test_footer_links_are_not_in_navigation_or_assistant_corpus(self) -> None:
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")

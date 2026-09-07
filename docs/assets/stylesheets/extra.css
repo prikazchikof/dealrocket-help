@@ -514,6 +514,63 @@ body {
   outline-offset: 0.12rem;
 }
 
+.dr-site-footer {
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  color: rgb(255 255 255 / 72%);
+}
+
+.dr-site-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.8fr) minmax(20rem, 1.2fr);
+  gap: 1.3rem 3rem;
+  padding: 1.4rem 0.8rem 1rem;
+  font-size: 0.64rem;
+  line-height: 1.45;
+}
+
+.dr-site-footer__menu {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 0.3rem 1.2rem;
+}
+
+.dr-site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dr-site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
+}
+
+.dr-site-footer a:focus-visible {
+  border-radius: 0.15rem;
+  outline: 2px solid #4ec246;
+  outline-offset: 0.12rem;
+}
+
+.dr-site-footer__company p {
+  margin: 0;
+}
+
+.dr-site-footer__company p + p {
+  margin-top: 0.75rem;
+}
+
+.dr-site-footer__company strong {
+  color: #fff;
+}
+
+.dr-site-footer__copyright {
+  grid-column: 1 / -1;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  color: rgb(255 255 255 / 56%);
+}
+
 .dr-not-found {
   max-width: 620px;
   margin: 10vh auto;
@@ -569,6 +626,15 @@ body {
 
   .dr-client-bases .dr-client-bases__list {
     column-width: auto;
+  }
+
+  .dr-site-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .dr-site-footer__copyright {
+    grid-column: auto;
   }
 
   .md-header__button.md-logo img {
