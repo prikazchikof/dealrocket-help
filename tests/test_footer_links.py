@@ -113,6 +113,7 @@ class FooterLinksTest(unittest.TestCase):
         for url in expected_urls:
             with self.subTest(url=url):
                 self.assertIn(f'href="{url}"', footer)
+        self.assertLess(footer.index('class="dr-site-footer__company"'), footer.index('class="dr-site-footer__menu"'))
         self.assertIn("ООО «Системы Машинного Обучения»", footer)
         self.assertIn("ИНН: 7802946363", footer)
         self.assertIn("Copyright ©", footer)
