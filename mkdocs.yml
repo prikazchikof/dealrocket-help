@@ -65,23 +65,23 @@ nav:
   - Навигация по справке: index.md
   - Начало работы:
       - Зачем использовать DealRocket: start/why-dealrocket/index.md
-      - Подготовиться к поиску: start/index.md
-      - Качество данных: data-quality/index.md
+      - Подготовиться к поиску: start/preparation/index.md
+      - Качество данных: start/data-quality/index.md
   - Поиск клиентов:
-      - Собрать новую базу: search/index.md
+      - Собрать новую базу: search/new-database/index.md
       - Найти по своему списку: search/company-list/index.md
       - Найти в крупном бизнесе: search/large-business/index.md
       - Убрать нерелевантные компании: search/refine/index.md
       - AI-помощник и подборки: search/ai-assistant/index.md
       - Как работают фильтры: search/filters/index.md
   - Работа с результатами:
-      - Контакты сотрудников и компаний: contacts/index.md
-      - Списки: lists/index.md
-      - Экспорт в Excel: export/index.md
-      - Что делать с базой: outreach/index.md
+      - Контакты сотрудников и компаний: results/contacts/index.md
+      - Списки: results/lists/index.md
+      - Экспорт в Excel: results/export/index.md
+      - Что делать с базой: results/outreach/index.md
   - Тарифы и оплата:
       - Тарификация: billing/tarification/index.md
-      - Оплата и документы: billing/index.md
+      - Оплата и документы: billing/payment-documents/index.md
   - Дополнительно:
       - Как найти идеальных B2B-клиентов: https://dealrocket.ru/how_to/
       - Блог о продажах: https://dealrocket.ru/news/

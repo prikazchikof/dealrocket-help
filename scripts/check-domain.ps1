@@ -45,11 +45,15 @@ try {
 }
 
 $deepLinks = [ordered]@{
-	'/data-quality/' = @('sources')
+	'/start/data-quality/' = @('sources')
+	'/start/preparation/' = @()
+	'/search/new-database/' = @('seniority')
 	'/search/company-list/' = @('enrichment')
 	'/search/refine/' = @()
-	'/billing/' = @('invoicebox', 'documents', 'refund', 'cancellation')
-	'/export/' = @('all-or-selected', 'stars', 'empty-fields', 'over-10000')
+	'/results/contacts/' = @('no-direct-contact')
+	'/results/export/' = @('all-or-selected', 'stars', 'empty-fields', 'over-10000')
+	'/billing/tarification/' = @('balance')
+	'/billing/payment-documents/' = @('invoicebox', 'documents', 'refund', 'cancellation')
 }
 
 foreach ($path in $deepLinks.Keys) {

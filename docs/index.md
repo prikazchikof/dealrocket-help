@@ -28,7 +28,7 @@ DealRocket — сервис для поиска B2B-клиентов и прям
 
     Найдите организации и ЛПР по отрасли, географии и другим критериям.
 
-    [Собрать базу с нуля →](search/index.md){ .help-card-link }
+    [Собрать базу с нуля →](search/new-database/index.md){ .help-card-link }
 
 -   :material-table-search:{ .lg .middle } **Найти контакты по своему списку компаний**
 
@@ -52,7 +52,7 @@ DealRocket — сервис для поиска B2B-клиентов и прям
 
 Если пока трудно описать, кому именно вы продаёте, сначала подготовьте короткий профиль идеального клиента. Он поможет выбрать фильтры и заранее понять, по каким признакам вы будете оценивать результат.
 
-[Подготовиться к поиску](start/index.md){ .md-button .md-button--primary }
+[Подготовиться к поиску](start/preparation/index.md){ .md-button .md-button--primary }
 
 ## Что делать с найденной базой
 
@@ -68,31 +68,31 @@ DealRocket — сервис для поиска B2B-клиентов и прям
 
     Сохраняйте компании и сотрудников в списки, очищайте результаты и продолжайте поиск внутри выбранных компаний.
 
-    [Работать со списками →](lists/index.md){ .help-card-link }
+    [Работать со списками →](results/lists/index.md){ .help-card-link }
 
 -   :material-card-account-phone-outline:{ .lg .middle } **Контакты сотрудников и компаний**
 
     Узнайте, чем отличаются типы контактов, как оставить в выдаче только почты или телефоны и что делать, если прямого контакта нет.
 
-    [Разобраться с контактами →](contacts/index.md){ .help-card-link }
+    [Разобраться с контактами →](results/contacts/index.md){ .help-card-link }
 
 -   :material-database-check-outline:{ .lg .middle } **Узнать о качестве данных**
 
     Узнайте, откуда DealRocket получает сведения и что делать, если нужного телефона или email нет.
 
-    [Узнать о качестве данных →](data-quality/index.md){ .help-card-link }
+    [Узнать о качестве данных →](start/data-quality/index.md){ .help-card-link }
 
 -   :material-download-outline:{ .lg .middle } **Экспортировать базу**
 
     Выгрузите найденные компании и контакты в Excel, чтобы передать их в CRM, систему рассылок или сервис для звонков.
 
-    [Экспортировать базу →](export/index.md){ .help-card-link }
+    [Экспортировать базу →](results/export/index.md){ .help-card-link }
 
 -   :material-account-arrow-right-outline:{ .lg .middle } **Подготовить базу к работе**
 
     Подготовьте данные к звонкам, email-рассылкам или работе в социальных сетях и выберите подходящий канал для первого контакта.
 
-    [Начать работу с базой →](outreach/index.md){ .help-card-link }
+    [Начать работу с базой →](results/outreach/index.md){ .help-card-link }
 
 -   :material-wallet-outline:{ .lg .middle } **Разобраться с тарификацией**
 
@@ -104,7 +104,7 @@ DealRocket — сервис для поиска B2B-клиентов и прям
 
     Узнайте, как оплатить тариф, получить счёт и закрывающие документы, отключить продление или проверить возможность возврата.
 
-    [Оплата и документы →](billing/index.md){ .help-card-link }
+    [Оплата и документы →](billing/payment-documents/index.md){ .help-card-link }
 
 </div>
 

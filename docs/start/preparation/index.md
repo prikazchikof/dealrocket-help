@@ -54,7 +54,7 @@ last_verified: 2026-09-04
 2. ЛПР или круг нужных сотрудников;
 3. подходящий сценарий поиска.
 
-Теперь выберите нужный путь: [собрать новую базу](../search/index.md), [найти людей по своему списку](../search/company-list/index.md) или [исследовать крупный бизнес](../search/large-business/index.md).
+Теперь выберите нужный путь: [собрать новую базу](../../search/new-database/index.md), [найти людей по своему списку](../../search/company-list/index.md) или [исследовать крупный бизнес](../../search/large-business/index.md).
 
 [Открыть DealRocket](https://dealrocket.ru/app/){ .md-button .md-button--primary }
-[Собрать новую базу](../search/index.md){ .md-button }
+[Собрать новую базу](../../search/new-database/index.md){ .md-button }

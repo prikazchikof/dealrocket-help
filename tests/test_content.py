@@ -13,26 +13,26 @@ from validate_content import load_site_url  # noqa: E402
 
 EXPECTED_ARTICLES = {
     "index.md": "home",
-    "start/index.md": "getting-started",
+    "start/preparation/index.md": "getting-started",
     "start/why-dealrocket/index.md": "why-dealrocket",
-    "search/index.md": "finding-clients",
+    "search/new-database/index.md": "finding-clients",
     "search/ai-assistant/index.md": "ai-client-search",
     "search/filters/index.md": "search-filters",
     "search/company-list/index.md": "search-company-list",
     "search/large-business/index.md": "search-large-business",
     "search/refine/index.md": "search-refine",
-    "contacts/index.md": "contacts-and-lists",
-    "lists/index.md": "working-with-lists",
-    "export/index.md": "exporting-data",
-    "data-quality/index.md": "data-and-freshness",
-    "billing/index.md": "plans-and-balance",
+    "results/contacts/index.md": "contacts-and-lists",
+    "results/lists/index.md": "working-with-lists",
+    "results/export/index.md": "exporting-data",
+    "start/data-quality/index.md": "data-and-freshness",
+    "billing/payment-documents/index.md": "plans-and-balance",
     "billing/tarification/index.md": "contact-tarification",
-    "outreach/index.md": "using-exported-data",
+    "results/outreach/index.md": "using-exported-data",
 }
 
 REQUIRED_MARKDOWN_ANCHORS = {
-    "export/index.md": {"all-or-selected", "stars", "empty-fields", "over-10000"},
-    "billing/index.md": {"invoicebox", "documents", "refund", "cancellation"},
+    "results/export/index.md": {"all-or-selected", "stars", "empty-fields", "over-10000"},
+    "billing/payment-documents/index.md": {"invoicebox", "documents", "refund", "cancellation"},
     "search/company-list/index.md": {"enrichment"},
     "search/filters/index.md": {
         "ai-filter",
@@ -93,24 +93,24 @@ EXPECTED_FILTER_NAMES = {
 
 VIDEO_ARTICLES = {
     "start/why-dealrocket/index.md": {"456239039": "Почему вы обязаны использовать DealRocket"},
-    "search/index.md": {
+    "search/new-database/index.md": {
         "456239040": "Как правильно искать компании по отраслям",
         "456239041": "Как правильно делать поиск по должностям",
     },
     "search/company-list/index.md": {"456239044": "Как найти контакты по своему списку компаний"},
     "search/large-business/index.md": {"456239042": "Как искать контакты в крупном бизнесе"},
-    "contacts/index.md": {"456239048": "Что делать, когда нет контакта сотрудника"},
-    "lists/index.md": {"456239047": "Как сохранить найденные результаты в список"},
-    "export/index.md": {"456239045": "Как экспортировать контакты в Excel или CRM"},
-    "data-quality/index.md": {"456239046": "Насколько качественные и актуальные данные"},
-    "outreach/index.md": {"456239049": "Что делать с полученной базой"},
+    "results/contacts/index.md": {"456239048": "Что делать, когда нет контакта сотрудника"},
+    "results/lists/index.md": {"456239047": "Как сохранить найденные результаты в список"},
+    "results/export/index.md": {"456239045": "Как экспортировать контакты в Excel или CRM"},
+    "start/data-quality/index.md": {"456239046": "Насколько качественные и актуальные данные"},
+    "results/outreach/index.md": {"456239049": "Что делать с полученной базой"},
 }
 
 VIDEO_FREE_ARTICLES = {
-    "start/index.md",
+    "start/preparation/index.md",
     "search/ai-assistant/index.md",
     "search/refine/index.md",
-    "billing/index.md",
+    "billing/payment-documents/index.md",
     "billing/tarification/index.md",
 }
 
@@ -158,7 +158,19 @@ class ContentTest(unittest.TestCase):
         self.assertEqual(actual, EXPECTED_ARTICLES)
 
     def test_removed_routes_are_not_sources(self) -> None:
-        for removed_path in ("enrichment/index.md", "data/index.md", "help/index.md"):
+        for removed_path in (
+            "enrichment/index.md",
+            "data/index.md",
+            "help/index.md",
+            "start/index.md",
+            "search/index.md",
+            "contacts/index.md",
+            "lists/index.md",
+            "export/index.md",
+            "outreach/index.md",
+            "data-quality/index.md",
+            "billing/index.md",
+        ):
             self.assertFalse((ROOT / "docs" / removed_path).exists())
 
     def test_scenario_guides_have_explicit_anchors(self) -> None:
@@ -219,12 +231,12 @@ class ContentTest(unittest.TestCase):
             self.assertNotIn('class="help-video-player"', articles_by_path[path], path)
 
         self.assertLess(
-            articles_by_path["search/index.md"].index("id=456239041"),
-            articles_by_path["search/index.md"].index("### Если нужной функции нет в списке"),
+            articles_by_path["search/new-database/index.md"].index("id=456239041"),
+            articles_by_path["search/new-database/index.md"].index("### Если нужной функции нет в списке"),
         )
         self.assertLess(
-            articles_by_path["contacts/index.md"].index("## Что делать, если нет прямого контакта"),
-            articles_by_path["contacts/index.md"].index("id=456239048"),
+            articles_by_path["results/contacts/index.md"].index("## Что делать, если нет прямого контакта"),
+            articles_by_path["results/contacts/index.md"].index("id=456239048"),
         )
 
     def test_contextual_faqs_are_kept_with_their_guides(self) -> None:

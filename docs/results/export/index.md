@@ -73,4 +73,4 @@ last_verified: 2026-09-04
 Этот подход можно повторять и без списков, но список позволяет в любой момент вернуться к уже обработанной части выборки.
 
 [Открыть DealRocket](https://dealrocket.ru/app/){ .md-button .md-button--primary }
-[Проверить баланс и оплату](../billing/index.md){ .md-button }
+[Проверить баланс и оплату](../../billing/payment-documents/index.md){ .md-button }

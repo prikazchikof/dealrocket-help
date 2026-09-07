@@ -75,5 +75,5 @@ InvoiceBox, или «Инвойсбокс», — партнёр DealRocket по 
 
 **Возврат** возвращает платёж и восстанавливает тариф, срок подписки и баланс до состояния перед оплатой.
 
-[Как работает тарификация](tarification/index.md){ .md-button }
+[Как работает тарификация](../tarification/index.md){ .md-button }
 [Открыть тарифы](https://dealrocket.ru/app/pricing/){ .md-button }

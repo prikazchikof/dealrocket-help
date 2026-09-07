@@ -47,4 +47,4 @@ last_verified: 2026-09-04
 У Unlimited другое правило: после окончания периода доступный и замороженный балансы обнуляются и впоследствии не восстанавливаются. Переход или продление Unlimited также заменяет общий баланс объёмом этого тарифа.
 
 [Открыть тарифы](https://dealrocket.ru/app/pricing/){ .md-button .md-button--primary }
-[Оплата и документы](../index.md){ .md-button }
+[Оплата и документы](../payment-documents/index.md){ .md-button }

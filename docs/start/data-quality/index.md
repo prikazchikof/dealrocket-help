@@ -79,4 +79,4 @@ LinkedIn дополняет эти данные специалистами из 
 Нет. Ответ зависит не только от актуальности данных, но и от аудитории, предложения, канала и текста обращения.
 
 [Открыть DealRocket](https://dealrocket.ru/app/){ .md-button .md-button--primary }
-[Как работать с контактами](../contacts/index.md){ .md-button }
+[Как работать с контактами](../../results/contacts/index.md){ .md-button }
