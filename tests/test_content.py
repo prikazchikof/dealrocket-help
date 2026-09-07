@@ -331,6 +331,10 @@ class ContentTest(unittest.TestCase):
         for setting in ("repo_url:", "repo_name:", "edit_uri:", "content.action.edit"):
             self.assertNotIn(setting, config)
 
+    def test_header_logo_links_to_dealrocket_homepage(self) -> None:
+        config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+        self.assertIn("homepage: https://dealrocket.ru/", config)
+
     def test_additional_nav_links_are_external(self) -> None:
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
         script = (ROOT / "docs/assets/javascripts/site.js").read_text(encoding="utf-8")

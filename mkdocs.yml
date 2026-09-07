@@ -59,6 +59,7 @@ extra_javascript:
 
 extra:
   generator: false
+  homepage: https://dealrocket.ru/
   links:
     app: https://dealrocket.ru/app/
     pricing: https://dealrocket.ru/app/pricing/
