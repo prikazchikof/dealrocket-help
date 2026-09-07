@@ -96,7 +96,8 @@ class FooterLinksTest(unittest.TestCase):
         self.assertIn('<summary class="dr-client-bases__summary">', partial)
         self.assertIn('target="_blank" rel="noopener"', partial)
         self.assertNotIn("nofollow", partial)
-        self.assertLess(footer.index('partials/client-base-links.html'), footer.index('class="md-footer-meta'))
+        self.assertLess(footer.index('class="md-footer-meta'), footer.index('partials/copyright.html'))
+        self.assertLess(footer.index('partials/copyright.html'), footer.index('partials/client-base-links.html'))
 
     def test_footer_links_are_not_in_navigation_or_assistant_corpus(self) -> None:
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")

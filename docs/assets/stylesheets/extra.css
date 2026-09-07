@@ -370,8 +370,7 @@ body {
 
 .dr-client-bases {
   border-top: 1px solid rgb(255 255 255 / 10%);
-  border-bottom: 1px solid rgb(255 255 255 / 10%);
-  background: #2a334b;
+  background: transparent;
   color: #fff;
 }
 
@@ -457,10 +456,8 @@ body {
 }
 
 .dr-client-bases__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
-  padding: 0.3rem 0 1.6rem;
+  display: block;
+  padding: 0.2rem 0 1.4rem;
 }
 
 .dr-client-bases .dr-client-bases__details > .dr-client-bases__grid:last-child {
@@ -468,29 +465,39 @@ body {
 }
 
 .dr-client-bases__group h2 {
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.4rem;
   color: #fff;
   font-size: 0.68rem;
   font-weight: 700;
 }
 
-.dr-client-bases__list {
-  display: grid;
-  gap: 0.25rem;
+.dr-client-bases__group + .dr-client-bases__group {
+  margin-top: 0.9rem;
+}
+
+.dr-client-bases .dr-client-bases__list {
+  display: block;
   margin: 0;
   padding: 0;
+  column-gap: 1.25rem;
+  column-width: 11.5rem;
   list-style: none;
 }
 
-.dr-client-bases__list li {
-  margin: 0;
+.dr-client-bases .dr-client-bases__list li {
+  margin: 0 0 0.08rem;
+  break-inside: avoid;
 }
 
-.dr-client-bases__list a {
+.dr-client-bases .dr-client-bases__list li::before {
+  display: none;
+}
+
+.dr-client-bases .dr-client-bases__list a {
   display: inline-block;
-  color: rgb(255 255 255 / 68%);
-  font-size: 0.59rem;
-  line-height: 1.45;
+  color: #fff;
+  font-size: 0.64rem;
+  line-height: 1.25;
   overflow-wrap: anywhere;
   text-decoration: none;
 }
@@ -560,9 +567,8 @@ body {
     padding: 0 0.8rem;
   }
 
-  .dr-client-bases__grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .dr-client-bases .dr-client-bases__list {
+    column-width: auto;
   }
 
   .md-header__button.md-logo img {
