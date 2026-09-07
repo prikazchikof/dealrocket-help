@@ -1,0 +1,461 @@
+source_url: https://dealrocket.ru/
+captured_at: '2026-09-07'
+expected_unique_links: 224
+groups:
+- id: industries
+  title: По отраслям
+  links:
+  - title: Поставщиков бытовой и профессиональной химии
+    url: https://dealrocket.ru/baza_postavshchikov_bytovoj_i_professionalnoj_himii/
+  - title: Поставщиков детских товаров
+    url: https://dealrocket.ru/baza_postavshchikov_detskih_tovarov/
+  - title: Поставщиков и оптовых компаний
+    url: https://dealrocket.ru/baza_postavshchikov_i_optovyh_kompanij/
+  - title: Поставщиков инструмента
+    url: https://dealrocket.ru/baza_postavshchikov_instrumenta/
+  - title: Поставщиков косметики и парфюмерии
+    url: https://dealrocket.ru/baza_postavshchikov_kosmetiki_i_parfyumerii/
+  - title: Поставщиков обуви
+    url: https://dealrocket.ru/baza_postavshchikov_obuvi/
+  - title: Поставщиков продуктов питания
+    url: https://dealrocket.ru/baza_postavshchikov_produktov_pitaniya/
+  - title: Поставщиков одежды
+    url: https://dealrocket.ru/baza_postavshchikov_odezhdy/
+  - title: Объектов с бассейнами
+    url: https://dealrocket.ru/baza_obektov_s_bassejnami/
+  - title: IT-компаний
+    url: https://dealrocket.ru/baza_it_kompanij/
+  - title: Event-агентств
+    url: https://dealrocket.ru/baza_event_agentstv/
+  - title: Автомагазинов
+    url: https://dealrocket.ru/baza_avtomagazinov/
+  - title: Автомоек
+    url: https://dealrocket.ru/baza_avtomoek/
+  - title: Автосервисов
+    url: https://dealrocket.ru/baza_avtoservisov/
+  - title: Автошкол
+    url: https://dealrocket.ru/baza_avtoshkol/
+  - title: Агентств недвижимости
+    url: https://dealrocket.ru/baza_agentstv_nedvizhimosti/
+  - title: Аптек
+    url: https://dealrocket.ru/baza_aptek/
+  - title: Ателье и швейных компаний
+    url: https://dealrocket.ru/baza_atele_i_shvejnyh_kompanij/
+  - title: Бань, саун
+    url: https://dealrocket.ru/baza_ban_saun/
+  - title: Библиотек
+    url: https://dealrocket.ru/baza_bibliotek/
+  - title: Бизнес-центров
+    url: https://dealrocket.ru/baza_biznes_centrov/
+  - title: Бухгалтерских компаний
+    url: https://dealrocket.ru/baza_buhgalterskih_kompanij/
+  - title: Ветеринарных клиник
+    url: https://dealrocket.ru/baza_veterinarnyh_klinik/
+  - title: Газовых компаний
+    url: https://dealrocket.ru/baza_gazovyh_kompanij/
+  - title: Гостиниц, приютов для животных
+    url: https://dealrocket.ru/baza_gostinic_priyutov_dlya_zhivotnyh/
+  - title: Государственных лечебных учреждений
+    url: https://dealrocket.ru/baza_gosudarstvennyh_lechebnyh_uchrezhdenij/
+  - title: Детейлинг и тюнинг центров
+    url: https://dealrocket.ru/baza_detejling_i_tyuning_centrov/
+  - title: Детских развивающих центров
+    url: https://dealrocket.ru/baza_detskih_razvivayushchih_centrov/
+  - title: Детских садов
+    url: https://dealrocket.ru/baza_detskih_sadov/
+  - title: Дизайнеров, дизайн-студий
+    url: https://dealrocket.ru/baza_dizajnerov_dizajn_studij/
+  - title: Зоосалонов, компаний груминга
+    url: https://dealrocket.ru/baza_zoosalonov_kompanij_gruminga/
+  - title: Интернет-магазинов
+    url: https://dealrocket.ru/baza_internet_magazinov/
+  - title: Интернет-провайдеров и операторов телевидения
+    url: https://dealrocket.ru/baza_internet_provajderov_i_operatorov_televideniya/
+  - title: Клининговых компаний
+    url: https://dealrocket.ru/baza_kliningovyh_kompanij/
+  - title: Кожевенных компаний
+    url: https://dealrocket.ru/baza_kozhevennyh_kompanij/
+  - title: Компаний аренды автомобилей
+    url: https://dealrocket.ru/baza_kompanij_arendy_avtomobilej/
+  - title: Компаний аренды спецтехники
+    url: https://dealrocket.ru/baza_kompanij_arendy_spectekhniki/
+  - title: Компаний дверей
+    url: https://dealrocket.ru/baza_kompanij_dverej/
+  - title: Компании охраны труда
+    url: https://dealrocket.ru/baza_kompanij_ohrany_truda/
+  - title: Компании по работе с бетоном, цементом, ЖБИ
+    url: https://dealrocket.ru/baza_kompanij_po_rabote_s_betonom_cementom_zhbi/
+  - title: Компании по ремонту и отделке
+    url: https://dealrocket.ru/baza_kompanij_po_remontu_i_otdelke/
+  - title: Компании по ремонту спецтехники
+    url: https://dealrocket.ru/baza_kompanij_po_remontu_spectekhniki/
+  - title: Компании приема металлолома
+    url: https://dealrocket.ru/baza_kompanij_priema_metalloloma/
+  - title: Компании ритуальных услуг
+    url: https://dealrocket.ru/baza_kompanij_ritualnyh_uslug/
+  - title: Компании света, освещения, световой продукции
+    url: https://dealrocket.ru/baza_kompanij_sveta_osveshcheniya_svetovoj_produkcii/
+  - title: Компании такси
+    url: https://dealrocket.ru/baza_kompanij_taksi/
+  - title: Компании упаковки, тары
+    url: https://dealrocket.ru/baza_kompanij_upakovki_tary/
+  - title: Компании фулфилмента
+    url: https://dealrocket.ru/baza_kompanij_fulfilmenta/
+  - title: Кондитерские
+    url: https://dealrocket.ru/baza_konditerskih/
+  - title: Консалтинговые компании
+    url: https://dealrocket.ru/baza_konsaltingovyh_kompanij/
+  - title: Косметологии
+    url: https://dealrocket.ru/baza_kosmetologij/
+  - title: Котельные компании
+    url: https://dealrocket.ru/baza_kotelnyh_kompanij/
+  - title: Кухонные компании
+    url: https://dealrocket.ru/baza_kuhonnyh_kompanij/
+  - title: Лизинговые, финансовые компании
+    url: https://dealrocket.ru/baza_lizingovyh_finansovyh_kompanij/
+  - title: Ломбарды
+    url: https://dealrocket.ru/baza_lombardov/
+  - title: Магазины дверей
+    url: https://dealrocket.ru/baza_magazinov_dverej/
+  - title: Магазины детских товаров
+    url: https://dealrocket.ru/baza_magazinov_detskih_tovarov/
+  - title: Магазины инструмента
+    url: https://dealrocket.ru/baza_magazinov_instrumenta/
+  - title: Магазины стройматериалов
+    url: https://dealrocket.ru/baza_magazinov_strojmaterialov/
+  - title: Магазины тканей
+    url: https://dealrocket.ru/baza_magazinov_tkanej/
+  - title: Массажные салоны
+    url: https://dealrocket.ru/baza_massazhnyh_salonov/
+  - title: Мебельные компании
+    url: https://dealrocket.ru/baza_mebelnyh_kompanij/
+  - title: Мебельные магазины
+    url: https://dealrocket.ru/baza_mebelnyh_magazinov/
+  - title: Медицинские центры и клиники
+    url: https://dealrocket.ru/baza_medicinskih_centrov_i_klinik/
+  - title: Металлообработчики
+    url: https://dealrocket.ru/baza_metalloobrabotchikov/
+  - title: Нефтегазовые компании
+    url: https://dealrocket.ru/baza_neftegazovyh_kompanij/
+  - title: Образовательные организации
+    url: https://dealrocket.ru/baza_obrazovatelnyh_organizacij/
+  - title: Оконные компании
+    url: https://dealrocket.ru/baza_okonnyh_kompanij/
+  - title: Онлайн-школы
+    url: https://dealrocket.ru/baza_onlajn_shkol/
+  - title: Отели и гостиницы
+    url: https://dealrocket.ru/baza_otelej_i_gostinic/
+  - title: Охранные компании
+    url: https://dealrocket.ru/baza_ohrannyh_kompanij/
+  - title: Парикмахерские, барбершопы
+    url: https://dealrocket.ru/baza_parikmaherskih_barbershopov/
+  - title: Пекарни
+    url: https://dealrocket.ru/baza_pekaren/
+  - title: Пивные компании
+    url: https://dealrocket.ru/baza_pivnyh_kompanij/
+  - title: Питомники растений
+    url: https://dealrocket.ru/baza_pitomnikov_rastenij/
+  - title: Пищевые производства
+    url: https://dealrocket.ru/baza_pishchevyh_proizvodstv/
+  - title: Поставщики автозапчастей и авто-товаров
+    url: https://dealrocket.ru/baza_postavshchikov_avtozapchastej_i_avto_tovarov/
+  - title: Поставщики алкогольной продукции
+    url: https://dealrocket.ru/baza_postavshchikov_alkogolnoj_produkcii/
+  - title: Поставщики табачной продукции
+    url: https://dealrocket.ru/baza_postavshchikov_tabachnoj_produkcii/
+  - title: Поставщики тканей
+    url: https://dealrocket.ru/baza_postavshchikov_tkanej/
+  - title: Продавцы бытовой и профессиональной химии
+    url: https://dealrocket.ru/baza_prodavcov_bytovoj_i_professionalnoj_himii/
+  - title: Продавцы детской одежды
+    url: https://dealrocket.ru/baza_prodavcov_detskoj_odezhdy/
+  - title: Продавцы женской одежды
+    url: https://dealrocket.ru/baza_prodavcov_zhenskoj_odezhdy/
+  - title: Продавцы запчастей для спецтехники
+    url: https://dealrocket.ru/baza_prodavcov_zapchastej_dlya_spectekhniki/
+  - title: Продавцы косметики и парфюмерии
+    url: https://dealrocket.ru/baza_prodavcov_kosmetiki_i_parfyumerii/
+  - title: Продавцы котлов и котельного оборудования
+    url: https://dealrocket.ru/baza_prodavcov_kotlov_i_kotelnogo_oborudovaniya/
+  - title: Продавцы медицинских изделий и оборудования
+    url: https://dealrocket.ru/baza_prodavcov_medicinskih_izdelij_i_oborudovaniya/
+  - title: Продавцы мобильных телефонов, смартфонов
+    url: https://dealrocket.ru/baza_prodavcov_mobilnyh_telefonov_smartfonov/
+  - title: Продавцы мужской одежды
+    url: https://dealrocket.ru/baza_prodavcov_muzhskoj_odezhdy/
+  - title: Продавцы обуви
+    url: https://dealrocket.ru/baza_prodavcov_obuvi/
+  - title: Продавцы одежды
+    url: https://dealrocket.ru/baza_prodavcov_odezhdy/
+  - title: Продавцы ортопедических товаров
+    url: https://dealrocket.ru/baza_prodavcov_ortopedicheskih_tovarov/
+  - title: Продавцы печей и каминов
+    url: https://dealrocket.ru/baza_prodavcov_pechej_i_kaminov/
+  - title: Продавцы подарков и сувениров
+    url: https://dealrocket.ru/baza_prodavcov_podarkov_i_suvenirov/
+  - title: Продавцы продуктов питания
+    url: https://dealrocket.ru/baza_prodavcov_produktov_pitaniya/
+  - title: Продавцы сантехники
+    url: https://dealrocket.ru/baza_prodavcov_santekhniki/
+  - title: Продавцы спецтехники
+    url: https://dealrocket.ru/baza_prodavcov_spectekhniki/
+  - title: Продавцы табачной продукции
+    url: https://dealrocket.ru/baza_prodavcov_tabachnoj_produkcii/
+  - title: Продавцы товаров водоснабжения, канализации
+    url: https://dealrocket.ru/baza_prodavcov_tovarov_vodosnabzheniya_kanalizacii/
+  - title: Продавцы товаров для бань, саун
+    url: https://dealrocket.ru/baza_prodavcov_tovarov_dlya_ban_saun/
+  - title: Продавцы товаров для животных
+    url: https://dealrocket.ru/baza_prodavcov_tovarov_dlya_zhivotnyh/
+  - title: Продавцы товаров для здоровья
+    url: https://dealrocket.ru/baza_prodavcov_tovarov_dlya_zdorovya/
+  - title: Продавцы товаров для охоты
+    url: https://dealrocket.ru/baza_prodavcov_tovarov_dlya_ohoty/
+  - title: Продавцы товаров для рыбалки
+    url: https://dealrocket.ru/baza_prodavcov_tovarov_dlya_rybalki/
+  - title: Продавцы товаров для туризма и отдыха
+    url: https://dealrocket.ru/baza_prodavcov_tovarov_dlya_turizma_i_otdyha/
+  - title: Продавцы товаров отопления, обогрева
+    url: https://dealrocket.ru/baza_prodavcov_tovarov_otopleniya_obogreva/
+  - title: Продавцы штор и домашнего текстиля
+    url: https://dealrocket.ru/baza_prodavcov_shtor_i_domashnego_tekstilya/
+  - title: Продавцы электрики, электро-товаров
+    url: https://dealrocket.ru/baza_prodavcov_elektriki_elektro_tovarov/
+  - title: Продавцы электроники и техники
+    url: https://dealrocket.ru/baza_prodavcov_elektroniki_i_tekhniki/
+  - title: Проектные организации
+    url: https://dealrocket.ru/baza_proektnyh_organizacij/
+  - title: Производители дверей
+    url: https://dealrocket.ru/baza_proizvoditelej_dverej/
+  - title: Производители картонных упаковок
+    url: https://dealrocket.ru/baza_proizvoditelej_kartonnyh_upakovok/
+  - title: Производители мебели
+    url: https://dealrocket.ru/baza_proizvoditelej_mebeli/
+  - title: Производители окон
+    url: https://dealrocket.ru/baza_proizvoditelej_okon/
+  - title: Производители хлебобулочных и макаронных изделий
+    url: https://dealrocket.ru/baza_proizvoditelej_hlebobulochnyh_i_makaronnyh_izdelij/
+  - title: Производители
+    url: https://dealrocket.ru/baza_proizvoditelej/
+  - title: Психологи, психиатры, психотерапевты
+    url: https://dealrocket.ru/baza_psihologov_psihiatrov_psihoterapevtov/
+  - title: Рекламные агентства
+    url: https://dealrocket.ru/baza_reklamnyh_agentstv/
+  - title: Рестораны и кафе
+    url: https://dealrocket.ru/baza_restoranov_i_kafe/
+  - title: Салоны красоты
+    url: https://dealrocket.ru/baza_salonov_krasoty/
+  - title: Салоны оптики и центры офтальмологии
+    url: https://dealrocket.ru/baza_salonov_optiki_i_centrov_oftalmologii/
+  - title: Санатории и пансионаты
+    url: https://dealrocket.ru/baza_sanatoriev_i_pansionatov/
+  - title: Сервисные центры
+    url: https://dealrocket.ru/baza_servisnyh_centrov/
+  - title: Склады, складская логистика, хранение
+    url: https://dealrocket.ru/baza_skladov_skladskoj_logistiki_hraneniya/
+  - title: Спортивные магазины
+    url: https://dealrocket.ru/baza_sportivnyh_magazinov/
+  - title: Спортивные организации
+    url: https://dealrocket.ru/baza_sportivnyh_organizacij/
+  - title: Стоматологии
+    url: https://dealrocket.ru/baza_stomatologij/
+  - title: Страховые компании
+    url: https://dealrocket.ru/baza_strahovyh_kompanij/
+  - title: Строительные компании
+    url: https://dealrocket.ru/baza_stroitelnyh_kompanij/
+  - title: Тату-салоны
+    url: https://dealrocket.ru/baza_tatu_salonov/
+  - title: Торговые центры
+    url: https://dealrocket.ru/baza_torgovyh_centrov/
+  - title: Транспортные, логистические компании
+    url: https://dealrocket.ru/baza_transportnyh_logisticheskih_kompanij/
+  - title: Туристические агентства
+    url: https://dealrocket.ru/baza_turisticheskih_agentstv/
+  - title: Управляющие компании
+    url: https://dealrocket.ru/baza_upravlyayushchih_kompanij/
+  - title: Учебные центры
+    url: https://dealrocket.ru/baza_uchebnyh_centrov/
+  - title: Фитнес центры, залы
+    url: https://dealrocket.ru/baza_fitnes_centrov_zalov/
+  - title: Химчистки и прачечные
+    url: https://dealrocket.ru/baza_himchistok_i_prachechnyh/
+  - title: Цветочные компании
+    url: https://dealrocket.ru/baza_cvetochnyh_kompanij/
+  - title: Школы танцев
+    url: https://dealrocket.ru/baza_shkol_tancev/
+  - title: Электромонтажные компании
+    url: https://dealrocket.ru/baza_elektromontazhnyh_kompanij/
+  - title: Ювелирные магазины и производители
+    url: https://dealrocket.ru/baza_yuvelirnyh_magazinov_i_proizvoditelej/
+  - title: Юридические компании
+    url: https://dealrocket.ru/baza_yuridicheskih_kompanij/
+  - title: Языковые школы
+    url: https://dealrocket.ru/baza_yazykovyh_shkol/
+  - title: Промышленность
+    url: https://dealrocket.ru/baza_promyshlennosti/
+  - title: База Директор
+    url: https://dealrocket.ru/baza_direktor/
+  - title: База Данные директоров
+    url: https://dealrocket.ru/baza_dannyh_direktorov/
+  - title: База HR
+    url: https://dealrocket.ru/baza_hr/
+  - title: База Генеральные директора
+    url: https://dealrocket.ru/baza_generalnyh_direktorov/
+  - title: База Директора компаний
+    url: https://dealrocket.ru/baza_direktorov_kompanij/
+  - title: База Предприятия пищевой промышленности
+    url: https://dealrocket.ru/baza_predpriyatij_pishchevoj_promyshlennosti/
+  - title: База Данные директоров компаний
+    url: https://dealrocket.ru/baza_dannyh_direktorov_kompanij/
+  - title: Директора предприятий
+    url: https://dealrocket.ru/baza_direktorov_predpriyatij/
+  - title: Директора России
+    url: https://dealrocket.ru/baza_direktorov_rossii/
+  - title: Авиакомпании
+    url: https://dealrocket.ru/baza_aviakompanij/
+  - title: Автосалоны
+    url: https://dealrocket.ru/baza_avtosalonov/
+  - title: Автотранспортные предприятия
+    url: https://dealrocket.ru/baza_avtotransportnyh_predpriyatij/
+  - title: Поставщики оборудования
+    url: https://dealrocket.ru/baza_postavshchikov_oborudovaniya/
+  - title: Клубы
+    url: https://dealrocket.ru/baza_klubov/
+  - title: Производители текстильного оборудования
+    url: https://dealrocket.ru/baza_proizvoditelej_tekstilnogo_oborudovaniya/
+  - title: Типографии
+    url: https://dealrocket.ru/baza_tipografij/
+  - title: Машиностроительные заводы
+    url: https://dealrocket.ru/baza_mashinostroitelnyh_zavodov/
+  - title: Производственные предприятия
+    url: https://dealrocket.ru/baza_proizvodstvennyh_predpriyatij/
+  - title: Предприятия России
+    url: https://dealrocket.ru/baza_predpriyatij_rossii/
+  - title: Транспортные предприятия
+    url: https://dealrocket.ru/baza_transportnyh_predpriyatij/
+  - title: Изготовители
+    url: https://dealrocket.ru/baza_izgotovitelej/
+  - title: Турагентства
+    url: https://dealrocket.ru/baza_turagentstv/
+  - title: Заводы и фабрики
+    url: https://dealrocket.ru/baza_zavodov_i_fabrik/
+  - title: Комбинаты
+    url: https://dealrocket.ru/baza_kombinatov/
+- id: roles
+  title: По должностям
+  links:
+  - title: Директора
+    url: https://dealrocket.ru/baza_directorov/
+  - title: Руководители
+    url: https://dealrocket.ru/baza_rukovoditelej/
+  - title: Менеджеры
+    url: https://dealrocket.ru/baza_menedzherov/
+  - title: Предприниматели
+    url: https://dealrocket.ru/baza_predprinimatelej/
+  - title: Маркетологи
+    url: https://dealrocket.ru/baza_marketologov/
+  - title: HR'ы
+    url: https://dealrocket.ru/baza_hrov/
+  - title: Бухгалтера
+    url: https://dealrocket.ru/baza_buhgalterov/
+  - title: Коммерческие директора
+    url: https://dealrocket.ru/baza_kommercheskih_direktorov/
+  - title: Владельцы бизнеса
+    url: https://dealrocket.ru/baza_vladelcev_biznesa/
+  - title: Технические директора
+    url: https://dealrocket.ru/baza_tekhnicheskih_direktorov/
+  - title: База Юристы
+    url: https://dealrocket.ru/baza_yuristov/
+  - title: База Отделы продаж
+    url: https://dealrocket.ru/baza_otdelov_prodazh/
+  - title: База Данные отдела продаж
+    url: https://dealrocket.ru/baza_dannyh_otdela_prodazh/
+  - title: База Владельцы
+    url: https://dealrocket.ru/baza_vladelcev/
+  - title: База Руководители организаций
+    url: https://dealrocket.ru/baza_rukovoditelej_organizacij/
+  - title: База Индивидуальные предприниматели
+    url: https://dealrocket.ru/baza_individualnyh_predprinimatelej/
+  - title: База Менеджер по продажам
+    url: https://dealrocket.ru/baza_menedzher_po_prodazham/
+  - title: База Данные предпринимателей
+    url: https://dealrocket.ru/baza_dannyh_predprinimatelej/
+  - title: База Логисты
+    url: https://dealrocket.ru/baza_logistov/
+  - title: База ЛПР
+    url: https://dealrocket.ru/baza_lpr/
+  - title: База Телефоны отдела кадров
+    url: https://dealrocket.ru/baza_telefonov_otdela_kadrov/
+  - title: База Главные бухгалтера
+    url: https://dealrocket.ru/baza_glavnye_buhgaltera/
+  - title: База Данные руководителей
+    url: https://dealrocket.ru/baza_dannyh_rukovoditelej/
+  - title: База Кадровики
+    url: https://dealrocket.ru/baza_kadrovikov/
+  - title: База Предприниматели России
+    url: https://dealrocket.ru/baza_predprinimatelej_rossii/
+  - title: База Клиенты для менеджера по продажам
+    url: https://dealrocket.ru/baza_klientov_dlya_menedzhera_po_prodazham/
+  - title: База Отделы снабжения
+    url: https://dealrocket.ru/baza_otdelov_snabzheniya/
+  - title: База Отделы закупок
+    url: https://dealrocket.ru/baza_otdelov_zakupok/
+  - title: Контакты ЛПР
+    url: https://dealrocket.ru/baza_kontaktov_lpr/
+  - title: Данные ЛПР
+    url: https://dealrocket.ru/baza_dannyh_lpr/
+  - title: Номера ЛПР
+    url: https://dealrocket.ru/baza_nomerov_lpr/
+  - title: Сотрудники компаний
+    url: https://dealrocket.ru/baza_sotrudnikov_kompanij/
+  - title: Номера телефонов руководителей организаций
+    url: https://dealrocket.ru/baza_nomerov_telefonov_rukovoditelej_organizacij/
+- id: companies
+  title: Компании и контакты
+  links:
+  - title: База Юридические лица
+    url: https://dealrocket.ru/baza_yuridicheskih_lic/
+  - title: База Организации
+    url: https://dealrocket.ru/baza_organizacij/
+  - title: База Юридические лица и индивидуальные предприниматели
+    url: https://dealrocket.ru/baza_yuridicheskih_lic_i_individualnyh_predprinimatelej/
+  - title: Номера телефонов
+    url: https://dealrocket.ru/baza_nomerov_telefonov/
+  - title: Email
+    url: https://dealrocket.ru/baza_emailov/
+  - title: Электронные адреса
+    url: https://dealrocket.ru/baza_elektronnyh_adresov/
+  - title: Новые компании
+    url: https://dealrocket.ru/baza_novyh_kompanij/
+  - title: Номера компаний
+    url: https://dealrocket.ru/baza_nomerov_kompanij/
+  - title: Контакты компаний
+    url: https://dealrocket.ru/baza_kontaktov_kompanij/
+  - title: Номера предприятий
+    url: https://dealrocket.ru/baza_nomerov_predpriyatij/
+  - title: Контакты
+    url: https://dealrocket.ru/baza_kontaktov/
+  - title: База Предприятия
+    url: https://dealrocket.ru/baza_predpriyatij/
+  - title: Российские организации
+    url: https://dealrocket.ru/baza_rossijskih_organizacij/
+  - title: Новые предприятия
+    url: https://dealrocket.ru/baza_novyh_predpriyatij/
+  - title: Организации России
+    url: https://dealrocket.ru/baza_organizacij_rossii/
+  - title: База Клиенты
+    url: https://dealrocket.ru/baza_klientov/
+  - title: Фирмы
+    url: https://dealrocket.ru/baza_firm/
+  - title: ООО
+    url: https://dealrocket.ru/baza_ooo/
+  - title: Лиды
+    url: https://dealrocket.ru/baza_lidov/
+  - title: Компании по отраслям
+    url: https://dealrocket.ru/baza_kompanij_po_otraslyam/
+  - title: Номера для обзвона
+    url: https://dealrocket.ru/baza_nomerov_dlya_obzvona/
+  - title: Компании Москвы
+    url: https://dealrocket.ru/baza_kompanij_moskvy/
+  - title: Новые организации
+    url: https://dealrocket.ru/baza_novyh_organizacij/

@@ -1,0 +1,29 @@
+{% if config.extra.client_base_link_groups %}
+  <section class="dr-client-bases md-typeset" aria-label="Базы клиентов">
+    <div class="dr-client-bases__inner md-grid">
+      <details class="dr-client-bases__details">
+        <summary class="dr-client-bases__summary">
+          <span class="dr-client-bases__summary-copy">
+            <strong>Базы клиентов</strong>
+            <small>Готовые подборки компаний и контактов</small>
+          </span>
+          <span class="dr-client-bases__toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="dr-client-bases__grid">
+          {% for group in config.extra.client_base_link_groups %}
+            <section class="dr-client-bases__group" aria-labelledby="dr-client-bases-{{ group.id }}">
+              <h2 id="dr-client-bases-{{ group.id }}">{{ group.title }}</h2>
+              <ul class="dr-client-bases__list">
+                {% for link in group.links %}
+                  <li>
+                    <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endfor %}
+        </div>
+      </details>
+    </div>
+  </section>
+{% endif %}

@@ -4,6 +4,11 @@ $domain = 'help.dealrocket.ru'
 $expectedTarget = 'prikazchikof.github.io'
 $expectedCanonical = 'https://help.dealrocket.ru/'
 $errors = [System.Collections.Generic.List[string]]::new()
+$inventory = Get-Content -Raw (Join-Path $PSScriptRoot '..\data\client-base-links.yml')
+if ($inventory -notmatch '(?m)^expected_unique_links:\s*(\d+)\s*$') {
+	throw 'Client base link inventory does not define expected_unique_links'
+}
+$expectedClientBaseLinks = [int]$Matches[1]
 
 try {
 	$cname = Resolve-DnsName -Name $domain -Type CNAME -ErrorAction Stop |
@@ -26,8 +31,12 @@ try {
 		$errors.Add("Homepage returned HTTP $($homeResponse.StatusCode)")
 	} elseif ($homeResponse.Content -notmatch '<link rel="canonical" href="https://help\.dealrocket\.ru/">') {
 		$errors.Add('Custom-domain canonical URL was not found on the homepage')
+	} elseif ($homeResponse.Content -notmatch '<summary class="dr-client-bases__summary">') {
+		$errors.Add('Client base footer disclosure was not found on the homepage')
+	} elseif (([regex]::Matches($homeResponse.Content, 'https://dealrocket\.ru/baza_')).Count -ne $expectedClientBaseLinks) {
+		$errors.Add("Client base footer does not contain the expected $expectedClientBaseLinks links")
 	} else {
-		Write-Host 'OK HTTPS and canonical'
+		Write-Host 'OK HTTPS, canonical, and client base footer'
 	}
 } catch {
 	$errors.Add("HTTPS is unavailable: $($_.Exception.Message)")
