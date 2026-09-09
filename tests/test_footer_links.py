@@ -117,12 +117,16 @@ class FooterLinksTest(unittest.TestCase):
         self.assertIn("ООО «Системы Машинного Обучения»", footer)
         self.assertIn("ИНН: 7802946363", footer)
         self.assertIn("Copyright ©", footer)
+        self.assertIn('href="{{ config.extra.links.contacts }}"', footer)
 
     def test_footer_links_are_not_in_navigation_or_assistant_corpus(self) -> None:
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
         corpus = (ROOT / "docs" / "assets" / "help-corpus.v1.json").read_text(encoding="utf-8")
+        footer_markup = '<a href="https://dealrocket.ru/app/contacts" target="_blank" rel="noopener noreferrer">Контакты</a>'
         self.assertNotIn("dealrocket.ru/baza_", config)
         self.assertNotIn("dealrocket.ru/baza_", corpus)
+        self.assertNotIn(footer_markup, config)
+        self.assertNotIn(footer_markup, corpus)
 
     def test_rendered_footer_is_present_on_public_surfaces(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -145,12 +149,23 @@ class FooterLinksTest(unittest.TestCase):
                     self.assertTrue(all(attrs.get("rel") == "noopener" for _, attrs in parser.links))
                     self.assertIn('<details class="dr-client-bases__details">', html)
                     self.assertNotIn('<details class="dr-client-bases__details" open', html)
+                    self.assertIn(
+                        '<a href="https://dealrocket.ru/app/contacts" target="_blank" rel="noopener noreferrer">Контакты</a>',
+                        html,
+                    )
+                    self.assertNotIn("t.me/", html.lower())
+                    self.assertNotIn("telegram.me/", html.lower())
+                    self.assertNotIn("@dealrockets", html.lower())
 
             search_index = json.loads((site_dir / "search" / "search_index.json").read_text(encoding="utf-8"))
             serialized_search = json.dumps(search_index, ensure_ascii=False)
             self.assertNotIn("dealrocket.ru/baza_", serialized_search)
             self.assertNotIn(self.data["groups"][0]["links"][0]["title"], serialized_search)
             self.assertNotIn("Готовые подборки компаний и контактов", serialized_search)
+            self.assertNotIn(
+                '<a href="https://dealrocket.ru/app/contacts" target="_blank" rel="noopener noreferrer">Контакты</a>',
+                serialized_search,
+            )
 
 
 if __name__ == "__main__":

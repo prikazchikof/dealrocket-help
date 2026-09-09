@@ -71,7 +71,7 @@ extra:
   links:
     app: https://dealrocket.ru/app/
     pricing: https://dealrocket.ru/app/pricing/
-    support: https://t.me/dealrockets
+    contacts: https://dealrocket.ru/app/contacts
 
 nav:
   - Навигация по справке: index.md

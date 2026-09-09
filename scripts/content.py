@@ -35,7 +35,6 @@ UNVERIFIED_DATABASE_SIZE = re.compile(
 UNVERIFIED_SUPERLATIVE = re.compile(
     r"(?i)\b(?:лучш\w*|единственн\w*|крупнейш\w*)\s+(?:данн\w*|баз\w*|сервис\w*|источник\w*)"
 )
-ALLOWED_TELEGRAM_HANDLE = "dealrockets"
 VERIFIED_PERCENT_CLAIMS = {
     "data-and-freshness": ("5–10% контактов",),
     "search-filters": ("95% данных DealRocket",),
@@ -118,13 +117,11 @@ def validate_content_safety(articles: list[Article]) -> None:
         if UNVERIFIED_PERCENT.search(percent_text):
             raise ValueError(f"{relative_path}: найден неподтверждённый процент")
 
-        for match in TELEGRAM_LINK.finditer(text):
-            if match.group(1).lower() != ALLOWED_TELEGRAM_HANDLE:
-                raise ValueError(f"{relative_path}: найдена непубличная Telegram-ссылка")
+        if TELEGRAM_LINK.search(text):
+            raise ValueError(f"{relative_path}: найдена Telegram-ссылка вместо единой страницы контактов")
 
-        for match in TELEGRAM_HANDLE.finditer(text):
-            if match.group(1).lower() != ALLOWED_TELEGRAM_HANDLE:
-                raise ValueError(f"{relative_path}: найден непубличный Telegram-аккаунт")
+        if TELEGRAM_HANDLE.search(text):
+            raise ValueError(f"{relative_path}: найден Telegram-аккаунт вместо единой страницы контактов")
 
 
 def article_url(path: Path, docs_dir: Path, site_url: str) -> str:

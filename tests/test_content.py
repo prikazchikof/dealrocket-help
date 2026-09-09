@@ -288,6 +288,7 @@ class ContentTest(unittest.TestCase):
             "Напишите на private@example.com.",
             "Позвоните по номеру +7 999 123-45-67.",
             "Напишите https://t.me/private_manager.",
+            "Напишите https://t.me/" + "dealrockets.",
             "Напишите @private_manager.",
             "Карта для оплаты: 4111 1111 1111 1111.",
             "Средняя конверсия составляет 15%.",
@@ -309,7 +310,7 @@ class ContentTest(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     validate_content_safety([article])
 
-    def test_public_support_link_is_allowed(self) -> None:
+    def test_public_contacts_page_is_allowed(self) -> None:
         metadata = {
             "id": "safe",
             "title": "Безопасная статья",
@@ -322,9 +323,22 @@ class ContentTest(unittest.TestCase):
         article = Article(
             ROOT / "docs" / "safe.md",
             metadata,
-            "# Тест\n\nНапишите [в поддержку](https://t.me/dealrockets).\n",
+            "# Тест\n\nОткройте [контакты](https://dealrocket.ru/app/contacts).\n",
         )
         validate_content_safety([article])
+
+    def test_data_quality_uses_canonical_contacts_page(self) -> None:
+        article = next(article for article in self.articles if article.metadata["id"] == "data-and-freshness")
+        self.assertIn("https://dealrocket.ru/app/contacts", article.markdown)
+        self.assertNotIn("t.me/", article.markdown.lower())
+
+    def test_non_article_sources_do_not_restore_telegram_fallback(self) -> None:
+        sources = [(ROOT / "mkdocs.yml").read_text(encoding="utf-8")]
+        sources.extend(path.read_text(encoding="utf-8") for path in (ROOT / "overrides").rglob("*.html"))
+        combined = "\n".join(sources).lower()
+        self.assertNotIn("t.me/", combined)
+        self.assertNotIn("telegram.me/", combined)
+        self.assertNotIn("@dealrockets", combined)
 
     def test_site_does_not_expose_repository_actions(self) -> None:
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
