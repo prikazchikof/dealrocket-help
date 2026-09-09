@@ -810,8 +810,8 @@ body {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  width: min(360px, calc(100vw - 40px));
-  height: min(540px, calc(100dvh - 40px));
+  width: min(400px, calc(100vw - 40px));
+  height: min(640px, calc(100dvh - 40px));
   overflow: hidden;
   border: 1px solid rgb(52 62 89 / 14%);
   border-radius: 10px;
