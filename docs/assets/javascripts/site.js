@@ -81,7 +81,7 @@
     root.className = "dr-support-widget";
     root.innerHTML =
       '<button class="dr-support-widget__launcher" type="button" aria-label="Открыть чат поддержки" aria-haspopup="dialog" aria-expanded="false">' +
-        '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 5.75A3.75 3.75 0 0 1 8.75 2h6.5A3.75 3.75 0 0 1 19 5.75v5.5A3.75 3.75 0 0 1 15.25 15H11l-4.7 4.08A.8.8 0 0 1 5 18.48V15.8a3.76 3.76 0 0 1-2-3.3V5.75A3.75 3.75 0 0 1 5 5.75Z"/></svg>' +
+        '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7.25 4.5h9.5a3.75 3.75 0 0 1 3.75 3.75v5.5a3.75 3.75 0 0 1-3.75 3.75H11l-5.5 3.75V17a3.75 3.75 0 0 1-2-3.32V8.25A3.75 3.75 0 0 1 7.25 4.5Z"/><path d="M8 9.25h8M8 12.75h5.25"/></svg>' +
       '</button>' +
       '<section class="dr-support-widget__panel" role="dialog" aria-label="Чат поддержки DealRocket" hidden>' +
         '<div class="dr-support-widget__fallback" hidden>' +

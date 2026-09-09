@@ -765,13 +765,13 @@ body {
   bottom: var(--dr-support-launcher-bottom);
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   padding: 0;
   border: 0;
-  border-radius: 50%;
+  border-radius: 10px;
   background: #2e9e2d;
-  box-shadow: 0 10px 30px rgb(32 40 60 / 25%);
+  box-shadow: 0 6px 18px rgb(32 40 60 / 18%);
   color: #fff;
   cursor: pointer;
   pointer-events: auto;
@@ -780,8 +780,8 @@ body {
 
 .dr-support-widget__launcher:hover {
   background: #257f25;
-  box-shadow: 0 12px 34px rgb(32 40 60 / 32%);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgb(32 40 60 / 24%);
+  transform: translateY(-1px);
 }
 
 .dr-support-widget__launcher:focus-visible,
@@ -792,9 +792,13 @@ body {
 }
 
 .dr-support-widget__launcher svg {
-  width: 27px;
-  height: 27px;
-  fill: currentColor;
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .dr-support-widget--open .dr-support-widget__launcher {
@@ -804,15 +808,15 @@ body {
 
 .dr-support-widget__panel {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: min(400px, calc(100vw - 48px));
-  height: min(640px, calc(100dvh - 48px));
+  right: 20px;
+  bottom: 20px;
+  width: min(360px, calc(100vw - 40px));
+  height: min(540px, calc(100dvh - 40px));
   overflow: hidden;
-  border: 1px solid rgb(52 62 89 / 16%);
-  border-radius: 18px;
+  border: 1px solid rgb(52 62 89 / 14%);
+  border-radius: 10px;
   background: #fff;
-  box-shadow: 0 22px 60px rgb(32 40 60 / 28%);
+  box-shadow: 0 14px 40px rgb(32 40 60 / 20%);
   pointer-events: auto;
 }
 
