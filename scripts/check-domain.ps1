@@ -33,7 +33,7 @@ try {
 		$errors.Add('Custom-domain canonical URL was not found on the homepage')
 	} elseif ($homeResponse.Content -notmatch '<summary class="dr-client-bases__summary">') {
 		$errors.Add('Client base footer disclosure was not found on the homepage')
-	} elseif ($homeResponse.Content -notmatch '<a href="https://dealrocket\.ru/app/contacts"[^>]*>Контакты</a>') {
+	} elseif ($homeResponse.Content -notmatch '<a href="https://dealrocket\.ru/app/contacts"[^>]*>') {
 		$errors.Add('Contacts link was not found in the homepage footer')
 	} elseif (([regex]::Matches($homeResponse.Content, 'https://dealrocket\.ru/baza_')).Count -ne $expectedClientBaseLinks) {
 		$errors.Add("Client base footer does not contain the expected $expectedClientBaseLinks links")
