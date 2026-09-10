@@ -21,6 +21,8 @@ REQUIRED_FIELDS = {
 }
 PUBLISHED_STATUS = "published"
 FRONT_MATTER = re.compile(r"\A---\s*\n(?P<meta>.*?)\n---\s*\n(?P<body>.*)\Z", re.DOTALL)
+RETRIEVABLE_HEADING = re.compile(r"(?m)^#{2,3}\s+.+$")
+EXPLICIT_ANCHOR = re.compile(r"\{\s*#([a-z0-9][a-z0-9_-]{0,79})\s*\}\s*$")
 EMAIL_ADDRESS = re.compile(r"(?i)\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b")
 RUSSIAN_PHONE = re.compile(
     r"(?<!\d)(?:\+7|8)[\s().-]*\d{3}[\s().-]*\d{3}[\s.-]*\d{2}[\s.-]*\d{2}(?!\d)"
@@ -99,6 +101,18 @@ def validate_content_safety(articles: list[Article]) -> None:
         )
         text = f"{metadata_text}\n{article.markdown}"
         relative_path = article.path.as_posix()
+
+        anchors: set[str] = set()
+        for heading in RETRIEVABLE_HEADING.findall(article.markdown):
+            match = EXPLICIT_ANCHOR.search(heading)
+            if not match:
+                raise ValueError(
+                    f"{relative_path}: у заголовка H2/H3 нет явного якоря: {heading}"
+                )
+            anchor = match.group(1)
+            if anchor in anchors:
+                raise ValueError(f"{relative_path}: дублирующийся якорь #{anchor}")
+            anchors.add(anchor)
 
         percent_text = text
         for verified_claim in VERIFIED_PERCENT_CLAIMS.get(article.metadata["id"], ()):

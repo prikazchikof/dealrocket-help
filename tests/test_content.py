@@ -408,6 +408,29 @@ class ContentTest(unittest.TestCase):
     def test_current_articles_pass_content_safety(self) -> None:
         validate_content_safety(self.articles)
 
+    def test_retrievable_headings_require_unique_explicit_anchors(self) -> None:
+        metadata = {
+            "id": "heading-contract",
+            "title": "Заголовки",
+            "description": "Тест",
+            "area": "test",
+            "keywords": ["тест"],
+            "status": "published",
+            "last_verified": "2026-09-10",
+        }
+        missing = Article(
+            ROOT / "docs" / "missing.md", metadata, "# Тест\n\n## Ответ без якоря\n"
+        )
+        duplicate = Article(
+            ROOT / "docs" / "duplicate.md",
+            metadata,
+            "# Тест\n\n## Ответ { #answer }\n\n### Уточнение { #answer }\n",
+        )
+        with self.assertRaisesRegex(ValueError, "нет явного якоря"):
+            validate_content_safety([missing])
+        with self.assertRaisesRegex(ValueError, "дублирующийся якорь"):
+            validate_content_safety([duplicate])
+
     def test_content_safety_rejects_private_contacts_and_claims(self) -> None:
         unsafe_fragments = (
             "Напишите на private@example.com.",

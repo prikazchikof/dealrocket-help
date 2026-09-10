@@ -20,7 +20,7 @@ DealRocket — сервис для поиска B2B-клиентов и прям
   <kbd>Ctrl K</kbd>
 </button>
 
-## Выберите сценарий поиска
+## Выберите сценарий поиска { #search-scenarios }
 
 <div class="grid cards help-card-grid scenario-cards" markdown>
 
@@ -54,7 +54,7 @@ DealRocket — сервис для поиска B2B-клиентов и прям
 
 [Подготовиться к поиску](start/preparation/index.md){ .md-button .md-button--primary }
 
-## Что делать с найденной базой
+## Что делать с найденной базой { #work-with-results }
 
 <div class="grid cards help-card-grid result-cards" markdown>
 
@@ -108,7 +108,7 @@ DealRocket — сервис для поиска B2B-клиентов и прям
 
 </div>
 
-## Быстрые ссылки
+## Быстрые ссылки { #quick-links }
 
 [Открыть DealRocket](https://dealrocket.ru/app/){ .md-button .md-button--primary }
 [Тарифы](https://dealrocket.ru/app/pricing/){ .md-button }
