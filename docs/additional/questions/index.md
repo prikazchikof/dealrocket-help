@@ -1,5 +1,5 @@
 ---
-id: account-and-teamwork
+id: other-questions
 title: Другие вопросы
 description: Ответы о совместной работе, смене email, публичном API и передаче данных в другие сервисы.
 area: additional

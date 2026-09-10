@@ -15,7 +15,7 @@ from validate_content import load_site_url  # noqa: E402
 EXPECTED_ARTICLES = {
     "index.md": "home",
     "start/preparation/index.md": "getting-started",
-    "start/account/index.md": "account-and-teamwork",
+    "additional/questions/index.md": "other-questions",
     "start/why-dealrocket/index.md": "why-dealrocket",
     "search/new-database/index.md": "finding-clients",
     "search/ai-assistant/index.md": "ai-client-search",
@@ -110,7 +110,7 @@ VIDEO_ARTICLES = {
 
 VIDEO_FREE_ARTICLES = {
     "start/preparation/index.md",
-    "start/account/index.md",
+    "additional/questions/index.md",
     "search/ai-assistant/index.md",
     "search/refine/index.md",
     "billing/payment-documents/index.md",
@@ -183,7 +183,7 @@ SECTION_SEARCH_ALIASES = {
         "run-export": "где скачать Excel?",
         "over-10000": "как разделить большую базу для экспорта?",
     },
-    "start/account/index.md": {
+    "additional/questions/index.md": {
         "shared-account": "можно ли работать под одним логином?",
         "change-login": "как перенести подписку на другой email?",
         "api": "есть ли у DealRocket API?",
@@ -250,6 +250,7 @@ class ContentTest(unittest.TestCase):
             "data/index.md",
             "help/index.md",
             "start/index.md",
+            "start/account/index.md",
             "search/index.md",
             "contacts/index.md",
             "lists/index.md",
@@ -309,7 +310,7 @@ class ContentTest(unittest.TestCase):
             "billing/payment-documents/index.md": ("Оплата через самозанятость не поддерживается", "история открытых контактов сохраняются"),
             "results/lists/index.md": ("За один раз в списке можно просматривать до 10 000 строк",),
             "results/work-with-data/index.md": ("правовых оснований и согласий",),
-            "start/account/index.md": (
+            "additional/questions/index.md": (
                 "Несколько сотрудников могут работать под одним логином",
                 "активную оплаченную подписку",
                 "Публичного API сейчас нет",
@@ -384,7 +385,7 @@ class ContentTest(unittest.TestCase):
             if article.metadata["id"] in {
                 "home",
                 "getting-started",
-                "account-and-teamwork",
+                "other-questions",
                 "search-large-business",
                 "search-refine",
                 "working-with-lists",

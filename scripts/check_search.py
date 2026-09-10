@@ -10,10 +10,10 @@ from pathlib import Path
 SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
     "зачем использовать DealRocket": ("start/why-dealrocket/", ("зачем", "dealrocket")),
     "как качество базы влияет на холодные продажи": ("start/why-dealrocket/", ("качеств", "базы", "холодн")),
-    "можно ли работать под одним логином": ("start/account/", ("одним", "логином")),
-    "как изменить email аккаунта": ("start/account/", ("изменить", "email", "аккаунт")),
-    "как перенести подписку": ("start/account/", ("перенести", "подписк")),
-    "есть ли у DealRocket API": ("start/account/", ("публичн", "api")),
+    "можно ли работать под одним логином": ("additional/questions/", ("одним", "логином")),
+    "как изменить email аккаунта": ("additional/questions/", ("изменить", "email", "аккаунт")),
+    "как перенести подписку": ("additional/questions/", ("перенести", "подписк")),
+    "есть ли у DealRocket API": ("additional/questions/", ("публичн", "api")),
     "как найти клиентов": ("search/new-database/", ("найти", "клиент")),
     "как найти ЛПР": ("search/new-database/", ("лпр",)),
     "AI-помощник для поиска клиентов": ("search/ai-assistant/", ("ai-помощник", "клиент")),
@@ -47,7 +47,7 @@ REQUIRED_DEEP_LINKS: dict[str, tuple[str, ...]] = {
     "billing/payment-documents/index.html": ("invoicebox", "documents", "refund", "cancellation"),
     "search/company-list/index.html": ("enrichment",),
     "start/data-quality/index.html": ("sources",),
-    "start/account/index.html": ("shared-account", "change-login"),
+    "additional/questions/index.html": ("shared-account", "change-login", "api"),
     "search/filters/index.html": (
         "ai-filter",
         "job-titles",
