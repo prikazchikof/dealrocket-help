@@ -186,11 +186,11 @@ SECTION_SEARCH_ALIASES = {
     "start/account/index.md": {
         "shared-account": "можно ли работать под одним логином?",
         "change-login": "как перенести подписку на другой email?",
+        "api": "есть ли у DealRocket API?",
     },
     "results/work-with-data/index.md": {
         "channel": "для каких задач подходит выгруженная база?",
         "crm-import": "есть ли интеграция с CRM?",
-        "api": "есть ли у DealRocket API?",
         "responsibility": "можно ли делать холодную рассылку?",
     },
     "start/data-quality/index.md": {
@@ -308,8 +308,12 @@ class ContentTest(unittest.TestCase):
             "billing/tarification/index.md": ("30 контактов", "после окончания подписки не исчезают"),
             "billing/payment-documents/index.md": ("Оплата через самозанятость не поддерживается", "история открытых контактов сохраняются"),
             "results/lists/index.md": ("За один раз в списке можно просматривать до 10 000 строк",),
-            "results/work-with-data/index.md": ("Публичного API сейчас нет", "правовых оснований и согласий"),
-            "start/account/index.md": ("Несколько сотрудников могут работать под одним логином", "активную оплаченную подписку"),
+            "results/work-with-data/index.md": ("правовых оснований и согласий",),
+            "start/account/index.md": (
+                "Несколько сотрудников могут работать под одним логином",
+                "активную оплаченную подписку",
+                "Публичного API сейчас нет",
+            ),
         }
         for path, fragments in expected_fragments.items():
             for fragment in fragments:

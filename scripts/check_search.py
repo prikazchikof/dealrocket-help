@@ -13,6 +13,7 @@ SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
     "можно ли работать под одним логином": ("start/account/", ("одним", "логином")),
     "как изменить email аккаунта": ("start/account/", ("изменить", "email", "аккаунт")),
     "как перенести подписку": ("start/account/", ("перенести", "подписк")),
+    "есть ли у DealRocket API": ("start/account/", ("публичн", "api")),
     "как найти клиентов": ("search/new-database/", ("найти", "клиент")),
     "как найти ЛПР": ("search/new-database/", ("лпр",)),
     "AI-помощник для поиска клиентов": ("search/ai-assistant/", ("ai-помощник", "клиент")),

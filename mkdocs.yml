@@ -78,7 +78,6 @@ nav:
   - Начало работы:
       - Зачем использовать DealRocket: start/why-dealrocket/index.md
       - Подготовиться к поиску: start/preparation/index.md
-      - Аккаунт и совместная работа: start/account/index.md
       - Качество данных: start/data-quality/index.md
   - Поиск клиентов:
       - Собрать новую базу: search/new-database/index.md
@@ -96,5 +95,6 @@ nav:
       - Тарификация: billing/tarification/index.md
       - Оплата и документы: billing/payment-documents/index.md
   - Дополнительно:
+      - Другие вопросы: start/account/index.md
       - Как найти идеальных B2B-клиентов: https://dealrocket.ru/how_to/
       - Блог о продажах: https://dealrocket.ru/news/
