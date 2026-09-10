@@ -36,6 +36,7 @@ UNVERIFIED_SUPERLATIVE = re.compile(
     r"(?i)\b(?:лучш\w*|единственн\w*|крупнейш\w*)\s+(?:данн\w*|баз\w*|сервис\w*|источник\w*)"
 )
 VERIFIED_PERCENT_CLAIMS = {
+    "contact-tarification": ("около 90% компаний",),
     "data-and-freshness": ("5–10% контактов",),
     "search-filters": ("95% данных DealRocket",),
 }
