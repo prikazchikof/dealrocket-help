@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -14,6 +15,7 @@ from validate_content import load_site_url  # noqa: E402
 EXPECTED_ARTICLES = {
     "index.md": "home",
     "start/preparation/index.md": "getting-started",
+    "start/account/index.md": "account-and-teamwork",
     "start/why-dealrocket/index.md": "why-dealrocket",
     "search/new-database/index.md": "finding-clients",
     "search/ai-assistant/index.md": "ai-client-search",
@@ -108,10 +110,95 @@ VIDEO_ARTICLES = {
 
 VIDEO_FREE_ARTICLES = {
     "start/preparation/index.md",
+    "start/account/index.md",
     "search/ai-assistant/index.md",
     "search/refine/index.md",
     "billing/payment-documents/index.md",
     "billing/tarification/index.md",
+}
+
+SECTION_SEARCH_ALIASES = {
+    "start/preparation/index.md": {
+        "choose-scenario": "как выбрать способ поиска?",
+        "company-profile": "как сформулировать клиентский сегмент?",
+        "person-profile": "как искать не только генерального директора?",
+        "course": "где посмотреть мини-курс?",
+        "ready": "что подготовить перед первым поиском?",
+    },
+    "billing/payment-documents/index.md": {
+        "card-payment": "как оплатить подписку картой?",
+        "invoicebox": "почему платёж проходит через InvoiceBox?",
+        "offer": "где посмотреть договор?",
+        "invoice": "как оплатить по счёту организации?",
+        "documents": "как получить документы по ЭДО?",
+        "cancellation": "как отключить автопродление?",
+        "refund": "можно ли вернуть последний платёж?",
+        "cancel-vs-refund": "чем возврат отличается от отключения продления?",
+    },
+    "billing/tarification/index.md": {
+        "charges": "когда уменьшается баланс контактов?",
+        "free-vs-paid": "даются ли контакты после регистрации?",
+        "demo": "как проверить базу перед оплатой?",
+        "database-count": "можно ли выгружать разные сегменты?",
+        "podbor-bazy": "можно заказать готовую подборку?",
+        "balance": "останутся ли уже открытые контакты?",
+    },
+    "search/new-database/index.md": {
+        "prepare": "с чего начать подбор базы?",
+        "market": "как найти компании нужной отрасли?",
+        "seniority": "как найти нужный отдел?",
+        "additional-filters": "можно ли фильтровать по выручке?",
+        "managed-segment": "базу нужно собирать самому?",
+    },
+    "search/filters/index.md": {
+        "how-to-combine": "какие фильтры поставить сначала?",
+        "ai-filter": "что делать, если нужного критерия нет?",
+        "job-titles": "что делать, если нужной должности нет?",
+        "location": "как искать только по городу?",
+        "industries": "что делать, если нужной отрасли нет в списке?",
+        "opened-contacts": "как увидеть только новые контакты?",
+    },
+    "search/company-list/index.md": {
+        "choose-method": "чем обычный поиск отличается от обогащения?",
+        "prepare": "можно ли загрузить список ИНН?",
+        "regular-search": "как искать по названиям компаний?",
+        "enrichment": "какие данные нужны для обогащения?",
+        "roles": "как найти ЛПР в загруженных компаниях?",
+        "limitations": "почему найдены не все компании?",
+    },
+    "results/contacts/index.md": {
+        "contact-types": "какие данные есть по сотруднику?",
+        "filter-contacts": "как найти только мобильные номера?",
+        "no-direct-contact": "что делать, если есть только общий номер?",
+        "contact-not-found": "почему контакт не открылся?",
+        "repeat-charge": "спишутся ли контакты при их повторном экспорте?",
+    },
+    "results/lists/index.md": {
+        "save-list": "как сохранить выдачу?",
+        "clean-list": "как удалить часть списка?",
+        "list-limit": "почему в списке видно не больше 10 000 строк?",
+        "multi-step-search": "как продолжить поиск внутри списка компаний?",
+    },
+    "results/export/index.md": {
+        "run-export": "где скачать Excel?",
+        "over-10000": "как разделить большую базу для экспорта?",
+    },
+    "start/account/index.md": {
+        "shared-account": "можно ли работать под одним логином?",
+        "change-login": "как перенести подписку на другой email?",
+    },
+    "results/work-with-data/index.md": {
+        "channel": "для каких задач подходит выгруженная база?",
+        "crm-import": "есть ли интеграция с CRM?",
+        "api": "есть ли у DealRocket API?",
+        "responsibility": "можно ли делать холодную рассылку?",
+    },
+    "start/data-quality/index.md": {
+        "sources": "откуда берутся контакты?",
+        "freshness": "данные проверяются перед выдачей?",
+        "different-fields": "почему часть полей пустая?",
+        "report": "как отправить пример ошибки?",
+    },
 }
 
 
@@ -196,6 +283,38 @@ class ContentTest(unittest.TestCase):
                 continue
             self.assertIn("Также ищут:", article.markdown)
 
+    def test_search_aliases_are_kept_with_their_exact_sections(self) -> None:
+        articles_by_path = {
+            article.path.relative_to(ROOT / "docs").as_posix(): article.markdown
+            for article in self.articles
+        }
+        for path, aliases_by_anchor in SECTION_SEARCH_ALIASES.items():
+            markdown = articles_by_path[path]
+            for anchor, alias in aliases_by_anchor.items():
+                pattern = re.compile(
+                    rf"^## [^\n]*\{{ #{re.escape(anchor)} \}}\n\n"
+                    rf"\*\*Также ищут:\*\*[^\n]*{re.escape(alias)}",
+                    re.MULTILINE,
+                )
+                self.assertRegex(markdown, pattern, f"{path}#{anchor}")
+
+    def test_confirmed_support_answers_are_published(self) -> None:
+        articles_by_path = {
+            article.path.relative_to(ROOT / "docs").as_posix(): article.markdown
+            for article in self.articles
+        }
+        expected_fragments = {
+            "start/preparation/index.md": ("https://dealrocket.ru/how_to/", "бесплатно подскажем в переписке"),
+            "billing/tarification/index.md": ("30 контактов", "после окончания подписки не исчезают"),
+            "billing/payment-documents/index.md": ("Оплата через самозанятость не поддерживается", "история открытых контактов сохраняются"),
+            "results/lists/index.md": ("За один раз в списке можно просматривать до 10 000 строк",),
+            "results/work-with-data/index.md": ("Публичного API сейчас нет", "правовых оснований и согласий"),
+            "start/account/index.md": ("Несколько сотрудников могут работать под одним логином", "активную оплаченную подписку"),
+        }
+        for path, fragments in expected_fragments.items():
+            for fragment in fragments:
+                self.assertIn(fragment, articles_by_path[path], path)
+
     def test_filter_reference_covers_every_visible_filter(self) -> None:
         article = next(article for article in self.articles if article.metadata["id"] == "search-filters")
         rows = [line for line in article.markdown.splitlines() if line.startswith("| **")]
@@ -261,6 +380,7 @@ class ContentTest(unittest.TestCase):
             if article.metadata["id"] in {
                 "home",
                 "getting-started",
+                "account-and-teamwork",
                 "search-large-business",
                 "search-refine",
                 "working-with-lists",
