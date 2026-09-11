@@ -201,6 +201,100 @@ SECTION_SEARCH_ALIASES = {
     },
 }
 
+RETRIEVAL_REGRESSION_ALIASES = {
+    "start/preparation/index.md": {"course": ("базовая обучалка по интерфейсу", "покажет РОПу")},
+    "billing/tarification/index.md": {
+        "charges": ("ещё не открытые контакты", "списываются контакты при выгрузке"),
+        "free-vs-paid": ("выгрузка с телефонами и почтами",),
+        "podbor-bazy": ("сколько целевых контактов получится найти",),
+        "balance": ("неиспользованными контактами", "открытые контакты после окончания тарифа"),
+    },
+    "search/filters/index.md": {
+        "how-to-combine": ("расширить маленькую выдачу", "ослаблять фильтры, если мало результатов"),
+        "job-titles": ("работают фильтры поиска по должности", "гендиректора с ФИО и почтой"),
+        "contacts": ("почтой или сотовым",),
+        "opened-contacts": ("открытые контакты от ещё не открытых",),
+        "record-count": ("не даёт выбрать больше 10 000", "лимит отображаемых записей"),
+    },
+    "search/company-list/index.md": {
+        "enrichment": ("обогатить список сайтов данными", "названию компании и сайту"),
+        "limitations": ("результат обогащения списка сайтов может быть неполным",),
+    },
+    "results/contacts/index.md": {
+        "contact-types": ("не появилось имя", "без ФИО"),
+        "filter-contacts": ("выборку сотрудников с мобильными номерами", "почтой или сотовым"),
+        "no-direct-contact": ("только почта, а номера нет",),
+    },
+    "results/export/index.md": {
+        "choose-contacts": ("добавляются все доступные контакты", "вручную открывать телефоны и ФИО"),
+    },
+    "start/data-quality/index.md": {
+        "different-fields": ("после открытия контактов имя не появилось",),
+    },
+}
+
+RETRIEVAL_REGRESSION_ALIAS_EVIDENCE = {
+    "start/preparation/index.md": {"course": {
+        "базовая обучалка по интерфейсу": "мини-курс",
+        "покажет РОПу": "мини-курс по работе с сервисом",
+    }},
+    "billing/tarification/index.md": {
+        "charges": {
+            "ещё не открытые контакты": "Закрытые, ещё не полученные контакты не уменьшают баланс",
+            "списываются контакты при выгрузке": "Если тип контакта выбран, первый экспорт открывает найденные данные и уменьшает баланс по тому же правилу, что и первый просмотр. Демо-экспорт со скрытыми звёздочками не открывает контакты и не уменьшает баланс",
+        },
+        "free-vs-paid": {"выгрузка с телефонами и почтами": "странице тарифов"},
+        "podbor-bazy": {"сколько целевых контактов получится найти": "не гарантируем заранее определённое количество"},
+        "balance": {
+            "неиспользованными контактами": "неиспользованные контакты замораживаются",
+            "открытые контакты после окончания тарифа": "Уже открытые контакты остаются",
+        },
+    },
+    "search/filters/index.md": {
+        "how-to-combine": {
+            "расширить маленькую выдачу": "убирайте фильтры в обратном порядке",
+            "ослаблять фильтры, если мало результатов": "убирайте фильтры в обратном порядке",
+        },
+        "job-titles": {
+            "работают фильтры поиска по должности": "Управленческий уровень",
+            "гендиректора с ФИО и почтой": "**«Есть имя сотрудника»** и **«Контакты сотрудника: есть почта»**",
+        },
+        "contacts": {"почтой или сотовым": "Так условие работает как «почта или сотовый»"},
+        "opened-contacts": {"открытые контакты от ещё не открытых": "контакты закрыты"},
+        "record-count": {
+            "не даёт выбрать больше 10 000": "не более 10 000 строк",
+            "лимит отображаемых записей": "не меняет баланс",
+        },
+    },
+    "search/company-list/index.md": {
+        "enrichment": {
+            "обогатить список сайтов данными": "дополнительно поищет открытые сведения",
+            "названию компании и сайту": "принимает только сайты компаний",
+        },
+        "limitations": {"результат обогащения списка сайтов может быть неполным": "сайт также может быть недоступен"},
+    },
+    "results/contacts/index.md": {
+        "contact-types": {
+            "не появилось имя": "не нашёл имя",
+            "без ФИО": "ФИО не появилось",
+        },
+        "filter-contacts": {
+            "выборку сотрудников с мобильными номерами": "есть мобильный телефон",
+            "почтой или сотовым": "Так условие работает как «почта или сотовый»",
+        },
+        "no-direct-contact": {"только почта, а номера нет": "Отсутствие телефона или email — нормальное ограничение"},
+    },
+    "results/export/index.md": {
+        "choose-contacts": {
+            "добавляются все доступные контакты": "не все типы контактов автоматически",
+            "вручную открывать телефоны и ФИО": "Вручную открывать телефоны и email перед выгрузкой не нужно",
+        },
+    },
+    "start/data-quality/index.md": {
+        "different-fields": {"после открытия контактов имя не появилось": "недоступно именно поле с именем"},
+    },
+}
+
 
 class ContentTest(unittest.TestCase):
     @classmethod
@@ -298,6 +392,59 @@ class ContentTest(unittest.TestCase):
                     re.MULTILINE,
                 )
                 self.assertRegex(markdown, pattern, f"{path}#{anchor}")
+
+    def test_regression_aliases_are_kept_with_their_exact_sections(self) -> None:
+        articles_by_path = {
+            article.path.relative_to(ROOT / "docs").as_posix(): article.markdown
+            for article in self.articles
+        }
+        for path, aliases_by_anchor in RETRIEVAL_REGRESSION_ALIASES.items():
+            markdown = articles_by_path[path]
+            for anchor, aliases in aliases_by_anchor.items():
+                heading = re.search(
+                    rf"^## [^\n]*\{{ #{re.escape(anchor)} \}}\n\n"
+                    rf"(\*\*Также ищут:\*\*[^\n]*)",
+                    markdown,
+                    re.MULTILINE,
+                )
+                self.assertIsNotNone(heading, f"{path}#{anchor}")
+                for alias in aliases:
+                    self.assertIn(alias, heading.group(1), f"{path}#{anchor}")
+
+    def test_regression_aliases_have_answer_evidence_in_the_same_section(self) -> None:
+        articles_by_path = {
+            article.path.relative_to(ROOT / "docs").as_posix(): article.markdown
+            for article in self.articles
+        }
+        self.assertEqual(
+            set(RETRIEVAL_REGRESSION_ALIASES),
+            set(RETRIEVAL_REGRESSION_ALIAS_EVIDENCE),
+        )
+        for path, evidence_by_anchor in RETRIEVAL_REGRESSION_ALIAS_EVIDENCE.items():
+            markdown = articles_by_path[path]
+            self.assertEqual(
+                set(RETRIEVAL_REGRESSION_ALIASES[path]),
+                set(evidence_by_anchor),
+                path,
+            )
+            for anchor, pairs in evidence_by_anchor.items():
+                self.assertEqual(
+                    set(RETRIEVAL_REGRESSION_ALIASES[path][anchor]),
+                    set(pairs),
+                    f"{path}#{anchor}",
+                )
+                section = re.search(
+                    rf"^## [^\n]*\{{ #{re.escape(anchor)} \}}\n(?P<body>.*?)(?=^## |\Z)",
+                    markdown,
+                    re.MULTILINE | re.DOTALL,
+                )
+                self.assertIsNotNone(section, f"{path}#{anchor}")
+                for alias, fragment in pairs.items():
+                    self.assertIn(
+                        fragment,
+                        section.group("body"),
+                        f"{path}#{anchor} alias {alias!r}",
+                    )
 
     def test_confirmed_support_answers_are_published(self) -> None:
         articles_by_path = {
