@@ -7,10 +7,42 @@ import re
 import urllib.error
 import urllib.request
 from http.cookiejar import CookieJar
+from html.parser import HTMLParser
 
 
 ORIGIN = "https://support.dealrocket.ru"
 TIMEOUT = 10
+
+
+class WidgetAssets(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.has_root = False
+        self.scripts: list[str] = []
+        self.styles: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = dict(attrs)
+        if tag == "div" and attributes.get("id") == "root":
+            self.has_root = True
+        if tag == "script" and attributes.get("type") == "module":
+            self.scripts.append(attributes.get("src") or "")
+        if tag == "link" and "stylesheet" in (attributes.get("rel") or "").split():
+            self.styles.append(attributes.get("href") or "")
+
+
+def widget_assets(widget: bytes) -> list[tuple[str, str]]:
+    parser = WidgetAssets()
+    parser.feed(widget.decode("utf-8"))
+    if "Помощник DealRocket".encode() not in widget or not parser.has_root:
+        raise RuntimeError("Widget HTML is missing the Assistant application")
+    if not parser.scripts or not parser.styles:
+        raise RuntimeError("Widget HTML is missing the Assistant assets")
+    assets = [(path, "js") for path in parser.scripts] + [(path, "css") for path in parser.styles]
+    for path, extension in assets:
+        if not re.fullmatch(r"/assistant-assets/assets/[A-Za-z0-9_.-]+\." + extension, path):
+            raise RuntimeError("Widget asset is outside the reviewed Assistant asset path")
+    return assets
 
 
 def read(opener: urllib.request.OpenerDirector, path: str) -> tuple[bytes, object]:
@@ -24,14 +56,17 @@ def main() -> None:
     opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(CookieJar()))
     widget, headers = read(opener, "/widget")
     policy = headers.get("Content-Security-Policy", "")
-    if "Помощник DealRocket".encode() not in widget or b"/assets/widget.js" not in widget:
-        raise RuntimeError("Widget HTML is missing the reviewed assets")
+    assets = widget_assets(widget)
     match = re.search(r"(?:^|;)\s*frame-ancestors\s+([^;]+)", policy, re.IGNORECASE)
     ancestors = set(match.group(1).split()) if match else set()
     if ancestors != {"'self'", "https://help.dealrocket.ru"}:
         raise RuntimeError("Widget CSP does not allow only the Help parent")
-    for path in ("/assets/chat-client.js", "/assets/widget.js", "/assets/widget.css"):
-        read(opener, path)
+    for path, extension in assets:
+        body, asset_headers = read(opener, path)
+        content_type = asset_headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
+        expected_types = {"text/javascript", "application/javascript"} if extension == "js" else {"text/css"}
+        if not body.strip() or content_type not in expected_types:
+            raise RuntimeError(f"Widget asset {path} is empty or has an unexpected content type")
 
     request = urllib.request.Request(
         ORIGIN + "/widget/api/session",
