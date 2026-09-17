@@ -13,7 +13,7 @@ from check_support_widget import main, widget_assets
 HTML = '''<title>Помощник DealRocket</title><div id="root"></div>
 <script type="module" src="/assistant-assets/assets/production-Ab12.js"></script>
 <link rel="stylesheet" href="/assistant-assets/assets/production-Cd34.css">'''
-CSP = {"Content-Security-Policy": "frame-ancestors 'self' https://help.dealrocket.ru"}
+CSP = {"Content-Security-Policy": "frame-ancestors 'self' https://help.dealrocket.ru https://dealrocket.ru"}
 COOKIE = "dr_support_widget_session=test; Secure; HttpOnly; SameSite=strict; Path=/widget/api"
 
 
@@ -81,6 +81,8 @@ class SupportPreflightTest(unittest.TestCase):
     def test_session_and_csp_fail_closed(self) -> None:
         cases = [
             ({"policy": {"Content-Security-Policy": "frame-ancestors *"}}, "Widget CSP"),
+            ({"policy": {"Content-Security-Policy": "frame-ancestors 'self' https://help.dealrocket.ru"}}, "Widget CSP"),
+            ({"policy": {"Content-Security-Policy": "frame-ancestors 'self' https://help.dealrocket.ru https://dealrocket.ru https://evil.example"}}, "Widget CSP"),
             ({"created": b'{"created": false}'}, "session was not created"),
             ({"restored": b'{"messages": ["previous session"]}'}, "session is not empty"),
         ]

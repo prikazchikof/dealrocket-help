@@ -78,7 +78,7 @@ class SupportWidgetTest(unittest.TestCase):
         self.assertLess(workflow.index(probe), workflow.index("actions/upload-pages-artifact"))
 
         preflight = (ROOT / "scripts/check_support_widget.py").read_text(encoding="utf-8")
-        self.assertIn("ancestors != {\"'self'\", \"https://help.dealrocket.ru\"}", preflight)
+        self.assertIn("ancestors != {\"'self'\", \"https://help.dealrocket.ru\", \"https://dealrocket.ru\"}", preflight)
 
 
 if __name__ == "__main__":

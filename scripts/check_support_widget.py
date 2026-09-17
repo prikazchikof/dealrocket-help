@@ -59,8 +59,8 @@ def main() -> None:
     assets = widget_assets(widget)
     match = re.search(r"(?:^|;)\s*frame-ancestors\s+([^;]+)", policy, re.IGNORECASE)
     ancestors = set(match.group(1).split()) if match else set()
-    if ancestors != {"'self'", "https://help.dealrocket.ru"}:
-        raise RuntimeError("Widget CSP does not allow only the Help parent")
+    if ancestors != {"'self'", "https://help.dealrocket.ru", "https://dealrocket.ru"}:
+        raise RuntimeError("Widget CSP does not match the Help and product parents")
     for path, extension in assets:
         body, asset_headers = read(opener, path)
         content_type = asset_headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
