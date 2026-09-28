@@ -64,7 +64,8 @@ $deepLinks = [ordered]@{
 	'/results/contacts/' = @('no-direct-contact')
 	'/results/export/' = @('all-or-selected', 'stars', 'empty-fields', 'over-10000')
 	'/billing/tarification/' = @('balance')
-	'/billing/payment-documents/' = @('invoicebox', 'documents', 'refund', 'cancellation')
+	'/billing/payment-documents/' = @('invoicebox', 'invoice-access', 'documents', 'refund', 'cancellation')
+	'/additional/questions/' = @('shared-account', 'personal-data-and-advertising')
 }
 
 foreach ($path in $deepLinks.Keys) {

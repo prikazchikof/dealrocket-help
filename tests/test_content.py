@@ -34,7 +34,7 @@ EXPECTED_ARTICLES = {
 
 REQUIRED_MARKDOWN_ANCHORS = {
     "results/export/index.md": {"all-or-selected", "stars", "empty-fields", "over-10000"},
-    "billing/payment-documents/index.md": {"invoicebox", "documents", "refund", "cancellation"},
+    "billing/payment-documents/index.md": {"invoicebox", "invoice-access", "documents", "refund", "cancellation"},
     "search/company-list/index.md": {"enrichment"},
     "search/filters/index.md": {
         "ai-filter",
@@ -127,9 +127,10 @@ SECTION_SEARCH_ALIASES = {
     },
     "billing/payment-documents/index.md": {
         "card-payment": "как оплатить подписку картой?",
+        "invoice": "как оплатить по счёту организации?",
+        "invoice-access": "когда активируется тариф после оплаты по счёту?",
         "invoicebox": "почему платёж проходит через InvoiceBox?",
         "offer": "где посмотреть договор?",
-        "invoice": "как оплатить по счёту организации?",
         "documents": "как получить документы по ЭДО?",
         "cancellation": "как отключить автопродление?",
         "refund": "можно ли вернуть последний платёж?",
@@ -187,6 +188,7 @@ SECTION_SEARCH_ALIASES = {
         "shared-account": "можно ли работать под одним логином?",
         "change-login": "как перенести подписку на другой email?",
         "api": "есть ли у DealRocket API?",
+        "personal-data-and-advertising": "что учитывать по 152 ФЗ и ФЗ о Рекламе?",
     },
     "results/work-with-data/index.md": {
         "channel": "для каких задач подходит выгруженная база?",
@@ -203,6 +205,9 @@ SECTION_SEARCH_ALIASES = {
 
 RETRIEVAL_REGRESSION_ALIASES = {
     "start/preparation/index.md": {"course": ("базовая обучалка по интерфейсу", "покажет РОПу")},
+    "billing/payment-documents/index.md": {
+        "invoice-access": ("счёт оплачен, но тариф не появился",),
+    },
     "billing/tarification/index.md": {
         "charges": ("ещё не открытые контакты", "списываются контакты при выгрузке"),
         "free-vs-paid": ("выгрузка с телефонами и почтами",),
@@ -228,6 +233,9 @@ RETRIEVAL_REGRESSION_ALIASES = {
     "results/export/index.md": {
         "choose-contacts": ("добавляются все доступные контакты", "вручную открывать телефоны и ФИО"),
     },
+    "additional/questions/index.md": {
+        "shared-account": ("как добавить члена команды", "как добавить сотрудника в личный кабинет"),
+    },
     "start/data-quality/index.md": {
         "different-fields": ("после открытия контактов имя не появилось",),
     },
@@ -238,6 +246,11 @@ RETRIEVAL_REGRESSION_ALIAS_EVIDENCE = {
         "базовая обучалка по интерфейсу": "мини-курс",
         "покажет РОПу": "мини-курс по работе с сервисом",
     }},
+    "billing/payment-documents/index.md": {
+        "invoice-access": {
+            "счёт оплачен, но тариф не появился": "обратитесь в поддержку InvoiceBox",
+        },
+    },
     "billing/tarification/index.md": {
         "charges": {
             "ещё не открытые контакты": "Закрытые, ещё не полученные контакты не уменьшают баланс",
@@ -290,6 +303,12 @@ RETRIEVAL_REGRESSION_ALIAS_EVIDENCE = {
             "вручную открывать телефоны и ФИО": "Вручную открывать телефоны и email перед выгрузкой не нужно",
         },
     },
+    "additional/questions/index.md": {
+        "shared-account": {
+            "как добавить члена команды": "Несколько сотрудников могут работать под одним логином",
+            "как добавить сотрудника в личный кабинет": "Отдельных командных аккаунтов и персональных профилей сотрудников сейчас нет",
+        },
+    },
     "start/data-quality/index.md": {
         "different-fields": {"после открытия контактов имя не появилось": "недоступно именно поле с именем"},
     },
@@ -317,6 +336,9 @@ class ContentTest(unittest.TestCase):
             "инвойсбокс",
             "договор-оферта",
             "вернуть последний платёж",
+            "когда откроется доступ после оплаты по счёту",
+            "152 фз",
+            "как добавить сотрудника в личный кабинет",
         ):
             self.assertIn(topic, haystack)
 
@@ -459,13 +481,32 @@ class ContentTest(unittest.TestCase):
             "results/work-with-data/index.md": ("правовых оснований и согласий",),
             "additional/questions/index.md": (
                 "Несколько сотрудников могут работать под одним логином",
+                "как добавить члена команды",
                 "активную оплаченную подписку",
                 "Публичного API сейчас нет",
+                "Мы подготовим заметку в скором времени на счёт того, как легально можно коммуницировать именно в B2B",
             ),
         }
         for path, fragments in expected_fragments.items():
             for fragment in fragments:
                 self.assertIn(fragment, articles_by_path[path], path)
+
+    def test_legal_entity_payment_article_keeps_the_approved_order(self) -> None:
+        article = next(article for article in self.articles if article.metadata["id"] == "plans-and-balance")
+        self.assertEqual(article.metadata["title"], "Оплата для юрлиц")
+        anchors = (
+            "card-payment",
+            "invoice",
+            "invoice-access",
+            "invoicebox",
+            "offer",
+            "documents",
+            "cancellation",
+            "refund",
+            "cancel-vs-refund",
+        )
+        positions = [article.markdown.index(f"{{ #{anchor} }}") for anchor in anchors]
+        self.assertEqual(positions, sorted(positions))
 
     def test_filter_reference_covers_every_visible_filter(self) -> None:
         article = next(article for article in self.articles if article.metadata["id"] == "search-filters")
@@ -659,6 +700,11 @@ class ContentTest(unittest.TestCase):
             self.assertIn(url, script)
         self.assertIn('link.target = "_blank"', script)
         self.assertIn('link.rel = "noopener noreferrer"', script)
+
+    def test_legal_entity_payment_navigation_label_is_stable(self) -> None:
+        config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+        self.assertIn("- Оплата для юрлиц: billing/payment-documents/index.md", config)
+        self.assertNotIn("- Оплата и документы: billing/payment-documents/index.md", config)
 
 
 if __name__ == "__main__":

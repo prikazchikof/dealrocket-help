@@ -11,6 +11,9 @@ SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
     "зачем использовать DealRocket": ("start/why-dealrocket/", ("зачем", "dealrocket")),
     "как качество базы влияет на холодные продажи": ("start/why-dealrocket/", ("качеств", "базы", "холодн")),
     "можно ли работать под одним логином": ("additional/questions/", ("одним", "логином")),
+    "как добавить члена команды": ("additional/questions/", ("добавить", "члена", "команды")),
+    "как добавить сотрудника в личный кабинет": ("additional/questions/", ("добавить", "сотрудника", "личный", "кабинет")),
+    "что учитывать по 152 ФЗ и ФЗ о Рекламе": ("additional/questions/", ("152", "фз", "рекламе")),
     "как изменить email аккаунта": ("additional/questions/", ("изменить", "email", "аккаунт")),
     "как перенести подписку": ("additional/questions/", ("перенести", "подписк")),
     "есть ли у DealRocket API": ("additional/questions/", ("публичн", "api")),
@@ -39,15 +42,16 @@ SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
     "закрывающие документы": ("billing/payment-documents/", ("закрывающ", "документ")),
     "кто такой Инвойсбокс": ("billing/payment-documents/", ("инвойсбокс",)),
     "почему в договоре указан InvoiceBox": ("billing/payment-documents/", ("договор", "invoicebox")),
+    "когда откроется доступ после оплаты по счёту": ("billing/payment-documents/", ("доступ", "оплаты", "счёту")),
     "насколько актуальны данные": ("start/data-quality/", ("актуальн", "данн")),
 }
 
 REQUIRED_DEEP_LINKS: dict[str, tuple[str, ...]] = {
     "results/export/index.html": ("all-or-selected", "stars", "empty-fields", "over-10000"),
-    "billing/payment-documents/index.html": ("invoicebox", "documents", "refund", "cancellation"),
+    "billing/payment-documents/index.html": ("invoicebox", "invoice-access", "documents", "refund", "cancellation"),
     "search/company-list/index.html": ("enrichment",),
     "start/data-quality/index.html": ("sources",),
-    "additional/questions/index.html": ("shared-account", "change-login", "api"),
+    "additional/questions/index.html": ("shared-account", "change-login", "api", "personal-data-and-advertising"),
     "search/filters/index.html": (
         "ai-filter",
         "job-titles",
