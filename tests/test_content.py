@@ -402,6 +402,17 @@ class ContentTest(unittest.TestCase):
                 continue
             self.assertIn("Также ищут:", article.markdown)
 
+    def test_result_name_and_large_export_answers_are_inside_faq(self) -> None:
+        for path, anchors in {
+            "results/contacts/index.md": ("get-name",),
+            "results/export/index.md": ("employee-names", "over-10000"),
+        }.items():
+            markdown = (ROOT / "docs" / path).read_text(encoding="utf-8")
+            faq = re.search(r"^## Частые вопросы \{ #faq \}\n(.*?)(?=^## |\Z)", markdown, re.MULTILINE | re.DOTALL)
+            self.assertIsNotNone(faq, path)
+            for anchor in anchors:
+                self.assertRegex(faq.group(1), rf"(?m)^### [^\n]*\{{ #{re.escape(anchor)} \}}$", f"{path}#{anchor}")
+
     def test_search_aliases_are_kept_with_their_exact_sections(self) -> None:
         articles_by_path = {
             article.path.relative_to(ROOT / "docs").as_posix(): article.markdown
@@ -411,7 +422,7 @@ class ContentTest(unittest.TestCase):
             markdown = articles_by_path[path]
             for anchor, alias in aliases_by_anchor.items():
                 pattern = re.compile(
-                    rf"^## [^\n]*\{{ #{re.escape(anchor)} \}}\n\n"
+                    rf"^#{{2,3}} [^\n]*\{{ #{re.escape(anchor)} \}}\n\n"
                     rf"\*\*Также ищут:\*\*[^\n]*{re.escape(alias)}",
                     re.MULTILINE,
                 )
