@@ -35,6 +35,10 @@ SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
     "как работать со списками": ("results/lists/", ("списк",)),
     "почему в файле звёздочки": ("results/export/", ("файл", "звездоч")),
     "экспорт": ("results/export/", ("экспорт",)),
+    "как установить DealRocket Agent": ("results/browser-extension/", ("скачайте", "распакуйте")),
+    "как обновить расширение": ("results/browser-extension/", ("обновить", "расширение")),
+    "как получить имена из LinkedIn": ("results/browser-extension/", ("имена", "linkedin")),
+    "как выгрузить контакты вместе с именами": ("results/export/", ("выгрузить", "контакты", "именами")),
     "как отменить подписку": ("billing/payment-documents/", ("отмен", "подпис")),
     "как вернуть деньги": ("billing/payment-documents/", ("вернут", "деньг")),
     "не пришёл чек": ("billing/payment-documents/", ("чек",)),
@@ -47,7 +51,9 @@ SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
 }
 
 REQUIRED_DEEP_LINKS: dict[str, tuple[str, ...]] = {
-    "results/export/index.html": ("all-or-selected", "stars", "empty-fields", "over-10000"),
+    "results/export/index.html": ("all-or-selected", "stars", "empty-fields", "over-10000", "employee-names", "hidden-names"),
+    "results/contacts/index.html": ("get-name",),
+    "results/browser-extension/index.html": ("install", "find-contacts", "get-names", "export-names", "update", "troubleshooting"),
     "billing/payment-documents/index.html": ("invoicebox", "invoice-access", "documents", "refund", "cancellation"),
     "search/company-list/index.html": ("enrichment",),
     "start/data-quality/index.html": ("sources",),

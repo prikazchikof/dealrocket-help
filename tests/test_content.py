@@ -26,6 +26,7 @@ EXPECTED_ARTICLES = {
     "results/contacts/index.md": "contacts-and-lists",
     "results/lists/index.md": "working-with-lists",
     "results/export/index.md": "exporting-data",
+    "results/browser-extension/index.md": "browser-extension",
     "start/data-quality/index.md": "data-and-freshness",
     "billing/payment-documents/index.md": "plans-and-balance",
     "billing/tarification/index.md": "contact-tarification",
@@ -33,6 +34,7 @@ EXPECTED_ARTICLES = {
 }
 
 REQUIRED_MARKDOWN_ANCHORS = {
+    "results/browser-extension/index.md": {"install", "find-contacts", "get-names", "export-names", "update", "troubleshooting"},
     "results/export/index.md": {"all-or-selected", "stars", "empty-fields", "over-10000"},
     "billing/payment-documents/index.md": {"invoicebox", "invoice-access", "documents", "refund", "cancellation"},
     "search/company-list/index.md": {"enrichment"},
@@ -288,7 +290,7 @@ RETRIEVAL_REGRESSION_ALIAS_EVIDENCE = {
     },
     "results/contacts/index.md": {
         "contact-types": {
-            "не появилось имя": "не нашёл имя",
+            "не появилось имя": "получить через браузерное расширение",
             "без ФИО": "ФИО не появилось",
         },
         "filter-contacts": {
