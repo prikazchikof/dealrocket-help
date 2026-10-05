@@ -88,7 +88,7 @@ nav:
       - Как работают фильтры: search/filters/index.md
   - Работа с результатами:
       - Контакты сотрудников и компаний: results/contacts/index.md
-      - Списки: results/lists/index.md
+      - Списки и сохранение фильтров: results/lists/index.md
       - Экспорт в Excel: results/export/index.md
       - Браузерное расширение: results/browser-extension/index.md
       - Что делать с базой: results/work-with-data/index.md

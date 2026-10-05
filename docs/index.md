@@ -64,11 +64,11 @@ DealRocket — сервис для поиска B2B-клиентов и прям
 
     [Убрать лишнее из выдачи →](search/refine/index.md){ .help-card-link }
 
--   :material-account-box-multiple-outline:{ .lg .middle } **Работать со списками**
+-   :material-account-box-multiple-outline:{ .lg .middle } **Списки и сохранение фильтров**
 
-    Сохраняйте компании и сотрудников в списки, очищайте результаты и продолжайте поиск внутри выбранных компаний.
+    Сохраняйте компании и сотрудников в списки или возвращайтесь к нужной аудитории через историю поиска и сохранённые фильтры.
 
-    [Работать со списками →](results/lists/index.md){ .help-card-link }
+    [Работать со списками и фильтрами →](results/lists/index.md){ .help-card-link }
 
 -   :material-card-account-phone-outline:{ .lg .middle } **Контакты сотрудников и компаний**
 
