@@ -169,6 +169,7 @@ SECTION_SEARCH_ALIASES = {
         "enrichment": "какие данные нужны для обогащения?",
         "roles": "как найти ЛПР в загруженных компаниях?",
         "limitations": "почему найдены не все компании?",
+        "employee-name-search": "можно ли обогатить данные конкретного сотрудника?",
     },
     "results/contacts/index.md": {
         "contact-types": "какие данные есть по сотруднику?",

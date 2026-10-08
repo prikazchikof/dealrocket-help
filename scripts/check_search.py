@@ -26,6 +26,7 @@ SMOKE_QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
     "свой список компаний": ("search/company-list/", ("спис", "компан")),
     "по ИНН": ("search/company-list/", ("инн",)),
     "обогащение": ("search/company-list/", ("обогащ",)),
+    "можно ли искать сотрудника по ФИО": ("search/company-list/", ("фио", "нельзя", "должность")),
     "крупный бизнес": ("search/large-business/", ("крупн", "бизнес")),
     "убрать нерелевантные компании": ("search/refine/", ("нерелевант", "компан")),
     "как работают фильтры": ("search/filters/", ("фильтр", "работ")),
@@ -65,7 +66,7 @@ REQUIRED_DEEP_LINKS: dict[str, tuple[str, ...]] = {
     "results/browser-extension/index.html": ("install", "find-contacts", "get-names", "export-names", "export-linkedin-names", "update", "troubleshooting"),
     "billing/tarification/index.html": ("one-time-purchase", "tariff-validity", "balance", "upgrade-plan", "contact-pack"),
     "billing/payment-documents/index.html": ("invoicebox", "invoice-access", "documents", "refund", "cancellation"),
-    "search/company-list/index.html": ("enrichment",),
+    "search/company-list/index.html": ("enrichment", "employee-name-search"),
     "start/data-quality/index.html": ("sources",),
     "additional/questions/index.html": ("ai-helper", "shared-account", "change-login", "api", "personal-data-and-advertising"),
     "search/filters/index.html": (
